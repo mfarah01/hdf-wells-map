@@ -1,0 +1,1057 @@
+{
+ "generatedAt": "2026-07-15T13:34:41.013Z",
+ "stats": {
+  "total": 94,
+  "completed": 45,
+  "countries": 11,
+  "partners": 4,
+  "totalCost": 243856
+ },
+ "pinned": [
+  {
+   "id": "RPT-001",
+   "partner": "Yabreen",
+   "partnerColor": "#7c3aed",
+   "country": "Egypt",
+   "location": "Egypt",
+   "type": "Water Purification Plant",
+   "dedication": "عوائل: السكري والحبشي وعبدالهادي وعلي والمليحي Families: Elsokkary, Al Habashy, AbdulHady, Ali and El Melihi",
+   "status": "completed",
+   "startDate": "2026-01-16",
+   "endDate": "2026-03-01",
+   "cost": 8000,
+   "beneficiaries": "Approximatly 500",
+   "photoLink": "https://drive.google.com/drive/folders/1jWxSNu7ljSmBxD41jveMeP21U5Bi8ea8?usp=drive_link",
+   "lat": 28.328606,
+   "lng": 29.060804
+  },
+  {
+   "id": "RPT-011",
+   "partner": "HDF Pakistan",
+   "partnerColor": "#d97706",
+   "country": "Pakistan",
+   "location": "Village Naholi, Chattarplain, District Mansehra",
+   "type": "Pakistan Water Well - Traditional Dug Well (100-130ft)",
+   "dedication": "Musa Rayyaan Ahmed",
+   "status": "in_progress",
+   "startDate": "2026-03-01",
+   "endDate": null,
+   "cost": 800,
+   "beneficiaries": "40 Families",
+   "photoLink": null,
+   "lat": 34.615013,
+   "lng": 73.13667
+  },
+  {
+   "id": "RPT-015",
+   "partner": "HDF Pakistan",
+   "partnerColor": "#d97706",
+   "country": "Pakistan",
+   "location": "Village Lachimang, Chattarplain, District Mansehra",
+   "type": "Pakistan Water Well - Traditional Dug Well (100-130ft)",
+   "dedication": "HDF Anonymous",
+   "status": "in_progress",
+   "startDate": "2026-03-01",
+   "endDate": null,
+   "cost": 800,
+   "beneficiaries": "40 Families",
+   "photoLink": null,
+   "lat": 34.606669,
+   "lng": 73.123513
+  },
+  {
+   "id": "HDF BUR 2026 001",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Burundi",
+   "location": "Gihanga, Burundi",
+   "type": "Hand pumped",
+   "dedication": "Alya Mansour",
+   "status": "completed",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": 3000,
+   "beneficiaries": null,
+   "photoLink": "Alya Masour/Rusara, Burundi",
+   "lat": -2.45947,
+   "lng": 30.404817
+  },
+  {
+   "id": "HDF ETH 2025 001",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Ethiopia",
+   "location": "Menagesha, Ethiopia",
+   "type": "Hand pumped",
+   "dedication": "Ajmal Nizamuddin",
+   "status": "completed",
+   "startDate": "2026-02-01",
+   "endDate": "2026-03-14",
+   "cost": 4000,
+   "beneficiaries": null,
+   "photoLink": "Ajmal Nizamuddin: Menagesha Ethiopia",
+   "lat": 9.064675,
+   "lng": 38.576541
+  },
+  {
+   "id": "HDF ETH 2026 005",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Ethiopia",
+   "location": "Bilcilbur, Ethiopia",
+   "type": "Hand pumped",
+   "dedication": "Samina Mansoor",
+   "status": "completed",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": 4000,
+   "beneficiaries": null,
+   "photoLink": "Samina Mansoor",
+   "lat": 8.550378,
+   "lng": 43.44928
+  },
+  {
+   "id": "HDF SO 2026 001",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Somalia",
+   "location": "Bula Xaaji, Lower Shabelle, Somalia",
+   "type": "Hand pumped",
+   "dedication": "Husna Peracha",
+   "status": "completed",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": 3000,
+   "beneficiaries": "150",
+   "photoLink": "Husna Perecha",
+   "lat": 1.677998,
+   "lng": 44.719386
+  },
+  {
+   "id": "HDF SO 2026 002",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Somalia",
+   "location": "Hiiran bile - Hiran - Somalia",
+   "type": "Shallow well",
+   "dedication": "A Chawdry",
+   "status": "in_progress",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": null,
+   "beneficiaries": null,
+   "photoLink": "A Chawdry",
+   "lat": 4.8388,
+   "lng": 45.2148
+  },
+  {
+   "id": "HDF KE 2024 001",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Barwaqo, Kenya",
+   "type": "Hand pumped",
+   "dedication": "Ahmad Amin and family",
+   "status": "completed",
+   "startDate": "2024-05-01",
+   "endDate": "2024-06-01",
+   "cost": 3500,
+   "beneficiaries": "180 Households",
+   "photoLink": "Ahmad Amin",
+   "lat": 1.725556,
+   "lng": 40.036667
+  },
+  {
+   "id": "HDF KE 2025 002",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Jogoo, Kenya",
+   "type": "Hand pumped",
+   "dedication": "Zaheer Syed and family",
+   "status": "completed",
+   "startDate": "2025-01-01",
+   "endDate": "2025-02-01",
+   "cost": 3500,
+   "beneficiaries": "160 Households",
+   "photoLink": "Zaheer family",
+   "lat": 1.729167,
+   "lng": 40.038889
+  },
+  {
+   "id": "HDF KE 2025 003",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Ali Maow, Kenya",
+   "type": "Hand pumped",
+   "dedication": "Maaz Munir and family",
+   "status": "completed",
+   "startDate": "2025-02-01",
+   "endDate": "2025-03-01",
+   "cost": 3500,
+   "beneficiaries": "170 Households",
+   "photoLink": "Maaz Family",
+   "lat": 1.728611,
+   "lng": 40.045
+  },
+  {
+   "id": "HDF KE 2025 004",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Waberi, Kenya",
+   "type": "Hand pumped",
+   "dedication": "Syed Waqa Haris and family",
+   "status": "completed",
+   "startDate": "2025-02-01",
+   "endDate": "2025-03-01",
+   "cost": 3500,
+   "beneficiaries": "190 Households",
+   "photoLink": "sayed waqas family",
+   "lat": 1.771944,
+   "lng": 40.082222
+  },
+  {
+   "id": "HDF KE 2025 008",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Wajir Primary, Kenya",
+   "type": "Hand pumped",
+   "dedication": "Hanif Zuhair Peracha",
+   "status": "completed",
+   "startDate": "2025-12-17",
+   "endDate": "2026-02-02",
+   "cost": 3500,
+   "beneficiaries": "300 Students & 70 Households",
+   "photoLink": "Hanif Zuhair: Wajir",
+   "lat": 1.69947,
+   "lng": 40.001383
+  },
+  {
+   "id": "HDF KE 2026 024",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Riyadhul Janna Mosque, Garbatulla, Isiolo, Kenya",
+   "type": "Hand pumped",
+   "dedication": "Bassem Elkhatib",
+   "status": "completed",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": 3500,
+   "beneficiaries": "150 household",
+   "photoLink": "Bassem Elkhatib",
+   "lat": 0.527549,
+   "lng": 38.51209
+  },
+  {
+   "id": "HDF KE 2026 025",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Lamu, Kenya",
+   "type": "Solar powered",
+   "dedication": "HDF Sadaqah Jariyah 1",
+   "status": "completed",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": 3500,
+   "beneficiaries": "100 Household",
+   "photoLink": "HDF Sadaqah Jariyah 1",
+   "lat": -2.37904,
+   "lng": 40.43856
+  },
+  {
+   "id": "HDF KE 2026 026",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Kinna, Isiolo, Kenya",
+   "type": "Solar powered",
+   "dedication": "HDF Sadaqah Jariyah 2",
+   "status": "completed",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": 3500,
+   "beneficiaries": "80 Household",
+   "photoLink": "HDF Sadaqah Jariyah 2/Kinna, Isiolo",
+   "lat": 0.320134,
+   "lng": 38.197101
+  },
+  {
+   "id": "HDF KE 2026 029",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Laisamis, Marsabit County, Kenya",
+   "type": "Borehole",
+   "dedication": "HDF Sadaqah Jariyah (Br. Ihab)",
+   "status": "completed",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": 25000,
+   "beneficiaries": null,
+   "photoLink": "Ihab 1",
+   "lat": 1.5885,
+   "lng": 37.802472
+  },
+  {
+   "id": "HDF KE 2026 030",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Korr, Marsabit, Kenya",
+   "type": "Borehole",
+   "dedication": "HDF Sadaqah Jariyah (Br. Ihab)",
+   "status": "completed",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": 25000,
+   "beneficiaries": null,
+   "photoLink": "Ihab 2",
+   "lat": 2.048463,
+   "lng": 37.423817
+  },
+  {
+   "id": "HDF KE 2026 031",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Banja village, Kisumu, Kenya",
+   "type": "Shallow well",
+   "dedication": "Kyrie Irving 1",
+   "status": "completed",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": 3500,
+   "beneficiaries": "64",
+   "photoLink": "Kyrie Irving 1",
+   "lat": 0.036861,
+   "lng": 34.827889
+  },
+  {
+   "id": "HDF KE 2026 032",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Ng'ombeni, Kwale, Kenya",
+   "type": "Semi-borehole",
+   "dedication": "Kyrie Irving 2",
+   "status": "completed",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": 9000,
+   "beneficiaries": "250",
+   "photoLink": "Kyrie Irving 2",
+   "lat": -4.126194,
+   "lng": 39.623083
+  },
+  {
+   "id": "HDF KE 2026 033",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Kua, Tana River, Kenya",
+   "type": "Hand pumped",
+   "dedication": "Mahir Patel",
+   "status": "completed",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": 3500,
+   "beneficiaries": "57",
+   "photoLink": "Mahir Patel",
+   "lat": 3.558962,
+   "lng": 39.049675
+  },
+  {
+   "id": "HDF KE 2026 034",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Kenya, Mandera, Bella",
+   "type": "Borehole",
+   "dedication": "Younas Family",
+   "status": "in_progress",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": null,
+   "beneficiaries": "500",
+   "photoLink": "Younas Family",
+   "lat": 3.947417,
+   "lng": 41.652889
+  },
+  {
+   "id": "HDF SL 2025 001",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Somaliland",
+   "location": "Dhubato, Somaliland",
+   "type": "Hand pulley",
+   "dedication": "Abdirahman Maxamud Dualeh",
+   "status": "completed",
+   "startDate": "2025-07-05",
+   "endDate": "2025-05-01",
+   "cost": 3000,
+   "beneficiaries": "150 Households",
+   "photoLink": "Abdirahman Maxamud Dualeh 1",
+   "lat": 9.738815,
+   "lng": 44.465536
+  },
+  {
+   "id": "HDF SUD 2026 001",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Sudan",
+   "location": "Kassala, Blue Nile, Sudan",
+   "type": "Hand pumped",
+   "dedication": "Najmaunisa Khanum",
+   "status": "completed",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": 6333,
+   "beneficiaries": null,
+   "photoLink": "Najmaunisa Khanum",
+   "lat": 15.295457,
+   "lng": 36.476311
+  },
+  {
+   "id": "HDF SUD 2026 003",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Sudan",
+   "location": "Al Dabbah",
+   "type": "Borehole",
+   "dedication": "HDF",
+   "status": "planned",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": null,
+   "beneficiaries": null,
+   "photoLink": "Al Dabbah/Sudan",
+   "lat": 18.054394,
+   "lng": 30.938408
+  },
+  {
+   "id": "HDF SUD 2026 004",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Sudan",
+   "location": "Dongola",
+   "type": "Borehole",
+   "dedication": null,
+   "status": "planned",
+   "startDate": "2026-03-05",
+   "endDate": "2026-06-05",
+   "cost": null,
+   "beneficiaries": null,
+   "photoLink": "Dongola/Sudan",
+   "lat": 19.175886,
+   "lng": 30.457448
+  },
+  {
+   "id": "HDF KE 2026 035",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Witu, Lamu",
+   "type": "Hand pumped",
+   "dedication": "Naveed Murtuza Khan",
+   "status": "in_progress",
+   "startDate": null,
+   "endDate": null,
+   "cost": null,
+   "beneficiaries": null,
+   "photoLink": "Naveed Murtuza Khan - Witu",
+   "lat": -2.340895,
+   "lng": 40.388067
+  },
+  {
+   "id": "HDF KE 2026 036",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Kenya",
+   "location": "Witu, Lamu",
+   "type": "Hand pumped",
+   "dedication": "Hodda Muraywid",
+   "status": "in_progress",
+   "startDate": null,
+   "endDate": null,
+   "cost": null,
+   "beneficiaries": null,
+   "photoLink": "Hodda Muraywid - Witu",
+   "lat": -2.340914,
+   "lng": 40.388038
+  },
+  {
+   "id": "HDF SUD 2026 007",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Sudan",
+   "location": "Al-Thora West, Al Dabbah city",
+   "type": "Hand pumped",
+   "dedication": "AlQamar Well",
+   "status": "in_progress",
+   "startDate": null,
+   "endDate": null,
+   "cost": null,
+   "beneficiaries": null,
+   "photoLink": null,
+   "lat": 19.645637,
+   "lng": 37.213422
+  },
+  {
+   "id": "HDF SUD 2026 008",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Sudan",
+   "location": "Dhat an-Nitaqayn, Port Sudan",
+   "type": "Hand pumped",
+   "dedication": "AshShams Well",
+   "status": "in_progress",
+   "startDate": null,
+   "endDate": null,
+   "cost": null,
+   "beneficiaries": null,
+   "photoLink": null,
+   "lat": 19.639565,
+   "lng": 37.211828
+  },
+  {
+   "id": "HDF SUD 2026 009",
+   "partner": "HDF Kenya",
+   "partnerColor": "#059669",
+   "country": "Sudan",
+   "location": "Al-Saada Primary school, Dar Alsalam, Port Sudan",
+   "type": "Hand pumped",
+   "dedication": "AnNajm Well",
+   "status": "in_progress",
+   "startDate": null,
+   "endDate": null,
+   "cost": null,
+   "beneficiaries": null,
+   "photoLink": null,
+   "lat": 19.596784,
+   "lng": 37.187078
+  }
+ ],
+ "aggregates": [
+  {
+   "country": "Afghanistan",
+   "count": 4,
+   "completed": 3,
+   "partners": [
+    "Kama Relief"
+   ],
+   "wells": [
+    {
+     "dedication": "Usama Khan and ⁠⁠Mohammad Asmat Khan",
+     "type": "Intermediate (35 meters)",
+     "location": "QALA-E-AKHOUND K-12 SCHOOL.",
+     "status": "completed",
+     "partner": "Kama Relief"
+    },
+    {
+     "dedication": "Sinthia Alam",
+     "type": "Intermediate (35 meters)",
+     "location": "KAMA DISTRICT, BYLA",
+     "status": "in_progress",
+     "partner": "Kama Relief"
+    },
+    {
+     "dedication": "Nabiha Jawaher Musa Salem",
+     "type": "Intermediate (35 meters)",
+     "location": "KAMA DISTRICT, BYLAYARI",
+     "status": "completed",
+     "partner": "Kama Relief"
+    },
+    {
+     "dedication": "Moosa Mohamed Fulhu",
+     "type": "Large (150 meters)",
+     "location": "KAMA DISTRICT, Totkay Village",
+     "status": "completed",
+     "partner": "Kama Relief"
+    }
+   ],
+   "lat": 34.5,
+   "lng": 66
+  },
+  {
+   "country": "Pakistan",
+   "count": 33,
+   "completed": 1,
+   "partners": [
+    "HDF Pakistan"
+   ],
+   "wells": [
+    {
+     "dedication": "Shifa Mahamood",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "Basti Khobri Pahar Pur Nashaib Teh & Dist Layyah",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Hind Ribhi Al Amad - Hasan",
+     "type": "Pakistan Solar Water Pump 100-130ft",
+     "location": "Govt Primery School Dhoon Wala Ehsanpur District Kot Addu",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Faraz Qamar",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "Basti Khobri Pahar Pur Nashaib Teh & Dist Layyah",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Jido Saleh",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "Basti Khobri Pahar Pur Nashaib Teh & Dist Layyah",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Younas Family",
+     "type": "Pakistan Water Well (Hand Pump 100-130ft)",
+     "location": "Village Pegham Korona Uc Maira Turagzai, Tehsil & district:Charsadda",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Amina Amraoui-Bensalem",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "District Layyah - Punjab",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Nasreen Akhtar Ramzan",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "District Layyah - Punjab",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Iqra Rahmatullah",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "District Layyah - Punjab",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "HDF Anonymous",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "District Layyah - Punjab",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Farah Najmi",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "District Layyah - Punjab",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Faruque Ahmed Chowdhury",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "District Layyah - Punjab",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "\" For Our Parents\" -Javed Rahmat",
+     "type": "Pakistan Water Well -Solar Water Station",
+     "location": null,
+     "status": "planned",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "\" For Our Parents\" -Javed Rahmat",
+     "type": "Pakistan Water Well -Solar Water Station",
+     "location": null,
+     "status": "planned",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "\" For Our Parents\" -Javed Rahmat",
+     "type": "Pakistan Water Well -Shallow / Indus Well 100–130 ft",
+     "location": "Village Farooq Haji Kalai UC Mera Maira Turagzai, Tehsil & district:Charsadda",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "\" For Our Parents\" -Javed Rahmat",
+     "type": "Pakistan Water Well -Shallow / Indus Well 100–130 ft",
+     "location": "Village Saadat Abad UC Maira Turagzai, Tehsil & district Charsadda",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "\" For Our Parents\" -Javed Rahmat",
+     "type": "Pakistan Water Well -Shallow / Indus Well 100–130 ft",
+     "location": "Village Jagangir Abad UC Maira Utmanzai, Tehsil & district Charsadda",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "\" For Our Parents\" -Javed Rahmat",
+     "type": "Pakistan Water Well -Shallow / Indus Well 100–130 ft",
+     "location": "Village Halimabad Utmanzai UC Utmanzai Tehsil & district Charsadda",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "\" For Our Parents\" -Javed Rahmat",
+     "type": "Pakistan Water Well -Shallow / Indus Well 100–130 ft",
+     "location": "Village Bypass Utmanzai UC Utmanzai ,Tehsil & district:Charsadda",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "\" For Our Parents\" -Javed Rahmat",
+     "type": "Pakistan Water Well -Shallow / Indus Well 100–130 ft",
+     "location": "UC Mera Gulabad Tehsil & District Charsadda",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "عبدالسميع غفور زينال التركماني",
+     "type": "Pakistan Water Well - Solar Water Pump (100–130 ft )",
+     "location": "Govt Primary School Malikwala Ehsanpur - Kot Addu",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "عبدالسميع غفور زينال التركماني",
+     "type": "Pakistan Water Well - Solar Water Pump (100–130 ft )",
+     "location": "Govt Primary School Haider Gazi Kot addu",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Younas Family",
+     "type": "Pakistan Water Well -Water Purification Station",
+     "location": "Jamia Farooqia, Shuja Abad, Multan, South Punjab",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Farhana Sahibzada",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "District Layyah - Punjab",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Younas Family",
+     "type": "Pakistan Water Well -Water Purification Station",
+     "location": "Mehmoodkote Road Muzaffargarh - Punjab",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Rubeena Dina",
+     "type": "Pakistan Water Well – Shallow Water Well / Indus Well 100–130 ft",
+     "location": null,
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Noor Ahmad",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "District Layyah - Punjab",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Humaira Humaira",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "District Layyah - Punjab",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Raed Safi",
+     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
+     "location": "District Layyah - Punjab",
+     "status": "completed",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Sadaqah Jaria for Dr. Muhammad F. Javid",
+     "type": "Pakistan Water Well -Water Purification Station",
+     "location": null,
+     "status": "planned",
+     "partner": "HDF Pakistan"
+    },
+    {
+     "dedication": "Sadaqah Jaria for Dr. Muhammad F. Javid",
+     "type": "Pakistan Water Well - Solar Water Well KP",
+     "location": "Village Dharra Sum, District Mansehra.",
+     "status": "in_progress",
+     "partner": "HDF Pakistan"
+    }
+   ],
+   "lat": 30.4,
+   "lng": 69.3
+  },
+  {
+   "country": "Ethiopia",
+   "count": 4,
+   "completed": 3,
+   "partners": [
+    "HDF Kenya"
+   ],
+   "wells": [
+    {
+     "dedication": "Hina Qureshi",
+     "type": "Hand pumped",
+     "location": "Wetabecha Minjaro, Ethiopia",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Saba Nawazish",
+     "type": "Shallow well",
+     "location": "Sheekh Abdisalaan Kebeles, Ethiopia",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Hamza Syed",
+     "type": "Hand pumped",
+     "location": "Ceel Xarlaad, Gursum, Ethiopia",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Talal Baweja",
+     "type": "Hand pumped",
+     "location": null,
+     "status": "in_progress",
+     "partner": "HDF Kenya"
+    }
+   ],
+   "lat": 9.1,
+   "lng": 40.5
+  },
+  {
+   "country": "Kenya",
+   "count": 12,
+   "completed": 12,
+   "partners": [
+    "HDF Kenya"
+   ],
+   "wells": [
+    {
+     "dedication": "Ajmal Nizamuddin",
+     "type": "Hand pumped",
+     "location": "Weremba Secondary School, Kakamega, Kenya",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Bukarood Almarri",
+     "type": "Hand pumped",
+     "location": "Nambale Muslim Primary, Busia County, Kenya",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Fatuma Arale Omar",
+     "type": "Hand pulley",
+     "location": "Mtendeni, Kenya",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Saima Iqbal",
+     "type": "Solar powered",
+     "location": "Mirere village, Kenya",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Israa Dahbour",
+     "type": "Hand pumped",
+     "location": "Witu Furaha Primary School, Kenya",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Israa Dahbour",
+     "type": "Hand pumped",
+     "location": "Witu Kijijini, Kenya",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Saba Nawazish",
+     "type": "Hand pumped",
+     "location": "Lunalo, Bumula Town, Bungoma,Kenya",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Saba Nawazish",
+     "type": "Hand pumped",
+     "location": "Afarshanle Primary School, Wajir, Kenya",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Saba Nawazish",
+     "type": "Hand pumped",
+     "location": "Myanga, Khasoko, Bungoma, Kenya",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Yusuf Haque",
+     "type": "Solar powered",
+     "location": "Matungu",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "HDF Sadaqah Jariyah 3",
+     "type": "Solar powered",
+     "location": "Garbatula, Isiolo, Kenya",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Zaheeruddin Mohammed",
+     "type": "Solar powered",
+     "location": "Garbatula, Isiolo, Kenya",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    }
+   ],
+   "lat": 0.4,
+   "lng": 37.9
+  },
+  {
+   "country": "Somalia",
+   "count": 4,
+   "completed": 3,
+   "partners": [
+    "HDF Kenya"
+   ],
+   "wells": [
+    {
+     "dedication": "Abdirahman Maxamud Dualeh",
+     "type": "Hand pumped",
+     "location": "Beledweyn, Somalia",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Fatuma Arale Omar",
+     "type": "Hand pumped",
+     "location": "Howl Wadaag, Somalia",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Mohamed Abdisalan Elmi",
+     "type": "Hand pumped",
+     "location": "Kismayo, Somalia",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Muntasir Muneer",
+     "type": "Hand pumped",
+     "location": null,
+     "status": "in_progress",
+     "partner": "HDF Kenya"
+    }
+   ],
+   "lat": 5.2,
+   "lng": 46.2
+  },
+  {
+   "country": "Sudan",
+   "count": 3,
+   "completed": 0,
+   "partners": [
+    "HDF Kenya"
+   ],
+   "wells": [
+    {
+     "dedication": null,
+     "type": "Borehole",
+     "location": "Imad al-Din al-Dabba Mosque, Block 24",
+     "status": "planned",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Marlen Bekirov",
+     "type": "Hand pumped",
+     "location": null,
+     "status": "in_progress",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "Sherif Eladly",
+     "type": "Hand pumped",
+     "location": null,
+     "status": "in_progress",
+     "partner": "HDF Kenya"
+    }
+   ],
+   "lat": 15.6,
+   "lng": 32.5
+  },
+  {
+   "country": "Tanzania",
+   "count": 2,
+   "completed": 2,
+   "partners": [
+    "HDF Kenya"
+   ],
+   "wells": [
+    {
+     "dedication": "Fouzi Hassan",
+     "type": "Shallow well",
+     "location": "Singida, Tanzania",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    },
+    {
+     "dedication": "HDF Sadaqah Jariyah 4",
+     "type": "Solar powered",
+     "location": "Arusha,Tanzania",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    }
+   ],
+   "lat": -6.4,
+   "lng": 34.9
+  },
+  {
+   "country": "Uganda",
+   "count": 1,
+   "completed": 1,
+   "partners": [
+    "HDF Kenya"
+   ],
+   "wells": [
+    {
+     "dedication": "Noor Peracha",
+     "type": "Hand pumped",
+     "location": "Banika Islamic Primary School, Uganda",
+     "status": "completed",
+     "partner": "HDF Kenya"
+    }
+   ],
+   "lat": 1.4,
+   "lng": 32.3
+  }
+ ]
+}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where We Build Wells — Human Development Fund</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js" defer></script>
+  <script src="./token.js"></script>
+  <style>
+    :root {
+      --hdf-primary: #0d577f;
+      --hdf-primary-dark: #0d3e58;
+      --hdf-gold: #eecd25;
+      --hdf-text: #393939;
+      --hdf-text-light: #666666;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      color: var(--hdf-text);
+      display: flex; flex-direction: column;
+      background: #eef1f4;
+    }
+
+    .pm-head {
+      background: linear-gradient(135deg, var(--hdf-primary) 0%, var(--hdf-primary-dark) 100%);
+      color: #fff;
+      padding: .9rem 1.4rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: .75rem 1.25rem;
+      flex-shrink: 0;
+    }
+    .pm-title { display: flex; align-items: center; gap: .8rem; }
+    .pm-title img { height: 36px; width: auto; }
+    .pm-title h1 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
+    .pm-title .sub { font-size: .75rem; color: rgba(255,255,255,0.75); margin-top: .1rem; }
+
+    .pm-stats { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+    .pm-stat { text-align: center; }
+    .pm-stat .v { font-size: 1.15rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+    .pm-stat .l { font-size: .62rem; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,0.72); }
+
+    .chip-row { display: flex; gap: .4rem; flex-wrap: wrap; }
+    .chip {
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border-radius: 999px;
+      padding: .25rem .7rem;
+      font-size: .72rem; font-weight: 600;
+      cursor: pointer;
+      display: inline-flex; align-items: center; gap: .35rem;
+      font-family: inherit;
+      transition: background .15s ease;
+    }
+    .chip:hover { background: rgba(255,255,255,0.22); }
+    .chip.active { background: var(--hdf-gold); color: var(--hdf-primary-dark); border-color: var(--hdf-gold); }
+    .chip .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    .pm-map-wrap { position: relative; flex: 1; min-height: 380px; }
+    #publicMap { position: absolute; inset: 0; background: #eef1f4; }
+
+    .pm-legend {
+      position: absolute; left: 12px; bottom: 12px; z-index: 5;
+      background: rgba(255,255,255,0.94);
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      padding: .6rem .8rem;
+      font-size: .72rem;
+      display: flex; flex-direction: column; gap: .3rem;
+      max-width: 240px;
+    }
+    .legend-item { display: inline-flex; align-items: center; gap: .45rem; }
+    .legend-swatch { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+    .legend-swatch.agg { background: #90a4b8; border: 2px dashed #5c7893; }
+
+    .mapboxgl-popup-content {
+      font-family: 'Outfit', system-ui, sans-serif;
+      border-radius: 10px; padding: 0; overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      min-width: 230px; max-width: 300px;
+    }
+    .wm-pop-head {
+      background: var(--hdf-primary-dark); color: #fff;
+      padding: .65rem .85rem; font-weight: 700; font-size: .92rem; line-height: 1.3;
+    }
+    .wm-pop-body { padding: .7rem .85rem; font-size: .8rem; }
+    .wm-pop-row { margin-bottom: .3rem; }
+    .wm-pop-row .lbl { color: var(--hdf-text-light); }
+    .wm-pop-badge {
+      display: inline-block; padding: .12rem .5rem; border-radius: 999px;
+      font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
+    }
+    .wm-pop-badge.completed { background: #C8E6C9; color: #1b5e20; }
+    .wm-pop-badge.in_progress { background: #FFF3E0; color: #8a5300; }
+    .wm-pop-badge.planned { background: #E3F2FD; color: #0d477f; }
+    .wm-pop-photos { display: inline-block; margin-top: .35rem; font-weight: 600; color: var(--hdf-primary); }
+    .wm-pop-list { margin: .3rem 0 0; padding-left: 1rem; max-height: 150px; overflow-y: auto; }
+    .wm-pop-list li { margin-bottom: .2rem; }
+
+    @media (max-width: 640px) {
+      .pm-stats { gap: .9rem; }
+      .pm-stat .v { font-size: .98rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pm-head">
+    <div class="pm-title">
+      <img src="https://hdfund.org/wp-content/uploads/2025/04/HDF-Logo.png" alt="Human Development Fund">
+      <div>
+        <h1>Where We Build Wells</h1>
+        <div class="sub">Human Development Fund · Water Program</div>
+      </div>
+    </div>
+
+    <div class="pm-stats" id="statsRow" style="display:none;">
+      <div class="pm-stat"><div class="v" id="stTotal">–</div><div class="l">Wells</div></div>
+      <div class="pm-stat"><div class="v" id="stCompleted">–</div><div class="l">Completed</div></div>
+      <div class="pm-stat"><div class="v" id="stCountries">–</div><div class="l">Countries</div></div>
+      <div class="pm-stat"><div class="v" id="stPartners">–</div><div class="l">Partners</div></div>
+      <div class="pm-stat"><div class="v" id="stCost">–</div><div class="l">Invested</div></div>
+    </div>
+    <div class="chip-row" id="chipRow">
+      <button class="chip active" data-partner="">All partners</button>
+    </div>
+  </div>
+
+  <div class="pm-map-wrap">
+    <div id="publicMap"></div>
+    <div class="pm-legend" id="mapLegend">
+      <span class="legend-item"><span class="legend-swatch agg"></span> Country total (precise location coming soon)</span>
+    </div>
+  </div>
+
+  <script>
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, c =>
+        ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+    }
+
+    (function waitForMapbox(tries) {
+      if (typeof mapboxgl !== 'undefined') return boot();
+      if (tries > 60) return;
+      setTimeout(() => waitForMapbox(tries + 1), 60);
+    })(0);
+
+    async function boot() {
+      const res = await fetch('./wells.json');
+      const data = await res.json();
+
+      const stats = data.stats || {};
+      document.getElementById('stTotal').textContent = stats.total ?? '–';
+      document.getElementById('stCompleted').textContent = stats.completed ?? '–';
+      document.getElementById('stCountries').textContent = stats.countries ?? '–';
+      document.getElementById('stPartners').textContent = stats.partners ?? '–';
+      document.getElementById('stCost').textContent = stats.totalCost != null ? '$' + Math.round(stats.totalCost).toLocaleString() : '–';
+      document.getElementById('statsRow').style.display = '';
+
+      const pinned = data.pinned || [];
+      const aggregates = data.aggregates || [];
+
+      const partners = {};
+      for (const w of pinned) partners[w.partner] = w.partnerColor;
+      for (const a of aggregates) for (const p of a.partners) partners[p] = partners[p] || '#5c7893';
+      const chipRow = document.getElementById('chipRow');
+      const legend = document.getElementById('mapLegend');
+      for (const [name, color] of Object.entries(partners)) {
+        const chip = document.createElement('button');
+        chip.className = 'chip';
+        chip.dataset.partner = name;
+        chip.innerHTML = '<span class="dot" style="background:' + esc(color) + '"></span>' + esc(name);
+        chipRow.appendChild(chip);
+        const li = document.createElement('span');
+        li.className = 'legend-item';
+        li.innerHTML = '<span class="legend-swatch" style="background:' + esc(color) + '"></span>' + esc(name);
+        legend.insertBefore(li, legend.firstChild);
+      }
+
+      mapboxgl.accessToken = window.MAPBOX_TOKEN || '';
+      const map = new mapboxgl.Map({
+        container: 'publicMap',
+        style: 'mapbox://styles/mapbox/light-v11',
+        center: [45, 12],
+        zoom: 2.6,
+        attributionControl: true,
+        cooperativeGestures: true,
+      });
+      map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-right');
+      map.on('error', (e) => console.error('Mapbox error:', e && e.error && e.error.message));
+
+      const pinsGeo = {
+        type: 'FeatureCollection',
+        features: pinned.map(w => ({
+          type: 'Feature',
+          geometry: { type: 'Point', coordinates: [w.lng, w.lat] },
+          properties: {
+            partner: w.partner, color: w.partnerColor,
+            country: w.country, location: w.location || '', type: w.type || '',
+            dedication: w.dedication || '',
+            status: w.status, startDate: w.startDate || '', endDate: w.endDate || '',
+            beneficiaries: w.beneficiaries || '', photoLink: w.photoLink || '',
+          },
+        })),
+      };
+      const aggGeo = {
+        type: 'FeatureCollection',
+        features: aggregates.map(a => ({
+          type: 'Feature',
+          geometry: { type: 'Point', coordinates: [a.lng, a.lat] },
+          properties: {
+            country: a.country, count: a.count, completed: a.completed,
+            partners: a.partners.join(', '),
+            wellsJson: JSON.stringify(a.wells),
+          },
+        })),
+      };
+
+      map.on('load', () => {
+        map.addSource('wells', { type: 'geojson', data: pinsGeo, cluster: true, clusterMaxZoom: 11, clusterRadius: 42 });
+        map.addLayer({
+          id: 'clusters', type: 'circle', source: 'wells', filter: ['has', 'point_count'],
+          paint: {
+            'circle-color': '#0d577f',
+            'circle-radius': ['step', ['get', 'point_count'], 16, 5, 20, 15, 26],
+            'circle-stroke-width': 2, 'circle-stroke-color': '#fff',
+          },
+        });
+        map.addLayer({
+          id: 'cluster-count', type: 'symbol', source: 'wells', filter: ['has', 'point_count'],
+          layout: { 'text-field': ['get', 'point_count_abbreviated'], 'text-size': 13 },
+          paint: { 'text-color': '#ffffff' },
+        });
+        map.addLayer({
+          id: 'well-pins', type: 'circle', source: 'wells', filter: ['!', ['has', 'point_count']],
+          paint: {
+            'circle-color': ['get', 'color'],
+            'circle-radius': 8,
+            'circle-stroke-width': 2, 'circle-stroke-color': '#fff',
+            'circle-opacity': ['match', ['get', 'status'], 'completed', 1, 0.75],
+          },
+        });
+
+        map.addSource('aggs', { type: 'geojson', data: aggGeo });
+        map.addLayer({
+          id: 'agg-bubbles', type: 'circle', source: 'aggs',
+          paint: {
+            'circle-color': '#90a4b8', 'circle-opacity': 0.55,
+            'circle-radius': ['+', 12, ['*', 1.1, ['get', 'count']]],
+            'circle-stroke-width': 2, 'circle-stroke-color': '#5c7893',
+          },
+        });
+        map.addLayer({
+          id: 'agg-count', type: 'symbol', source: 'aggs',
+          layout: { 'text-field': ['to-string', ['get', 'count']], 'text-size': 13 },
+          paint: { 'text-color': '#1f3a52' },
+        });
+
+        const bounds = new mapboxgl.LngLatBounds();
+        pinsGeo.features.forEach(f => bounds.extend(f.geometry.coordinates));
+        aggGeo.features.forEach(f => bounds.extend(f.geometry.coordinates));
+        if (!bounds.isEmpty()) map.fitBounds(bounds, { padding: 60, maxZoom: 6 });
+
+        map.on('click', 'clusters', (e) => {
+          const f = map.queryRenderedFeatures(e.point, { layers: ['clusters'] })[0];
+          map.getSource('wells').getClusterExpansionZoom(f.properties.cluster_id, (err, zoom) => {
+            if (!err) map.easeTo({ center: f.geometry.coordinates, zoom });
+          });
+        });
+
+        map.on('click', 'well-pins', (e) => {
+          const p = e.features[0].properties;
+          const dates = [p.startDate, p.endDate].filter(Boolean).join(' → ');
+          const html =
+            '<div class="wm-pop-head">' + esc(p.dedication || p.type || 'Well') + '</div>' +
+            '<div class="wm-pop-body">' +
+              '<div class="wm-pop-row"><span class="wm-pop-badge ' + esc(p.status) + '">' + esc(String(p.status).replace('_', ' ')) + '</span></div>' +
+              '<div class="wm-pop-row"><span class="lbl">Built by:</span> ' + esc(p.partner) + '</div>' +
+              '<div class="wm-pop-row"><span class="lbl">Type:</span> ' + esc(p.type || '—') + '</div>' +
+              (p.location ? '<div class="wm-pop-row"><span class="lbl">Location:</span> ' + esc(p.location) + ', ' + esc(p.country) + '</div>'
+                          : '<div class="wm-pop-row"><span class="lbl">Country:</span> ' + esc(p.country) + '</div>') +
+              (p.beneficiaries ? '<div class="wm-pop-row"><span class="lbl">Serves:</span> ' + esc(p.beneficiaries) + '</div>' : '') +
+              (dates ? '<div class="wm-pop-row"><span class="lbl">Built:</span> ' + esc(dates) + '</div>' : '') +
+              (p.photoLink ? '<a class="wm-pop-photos" href="' + esc(p.photoLink) + '" target="_blank" rel="noopener noreferrer">View photos ↗</a>' : '') +
+            '</div>';
+          new mapboxgl.Popup({ offset: 12 }).setLngLat(e.lngLat).setHTML(html).addTo(map);
+        });
+
+        map.on('click', 'agg-bubbles', (e) => {
+          const p = e.features[0].properties;
+          let wells = [];
+          try { wells = JSON.parse(p.wellsJson); } catch (_) {}
+          const items = wells.map(w =>
+            '<li>' + esc(w.dedication || w.type || 'Well') + (w.location ? ' <span style="color:#888;">· ' + esc(w.location) + '</span>' : '') + '</li>'
+          ).join('');
+          const html =
+            '<div class="wm-pop-head">' + esc(p.country) + ' · ' + esc(p.count) + ' wells</div>' +
+            '<div class="wm-pop-body">' +
+              '<div class="wm-pop-row"><span class="lbl">Built by:</span> ' + esc(p.partners) + '</div>' +
+              '<div class="wm-pop-row"><span class="lbl">Completed:</span> ' + esc(p.completed) + ' of ' + esc(p.count) + '</div>' +
+              (items ? '<ul class="wm-pop-list">' + items + '</ul>' : '') +
+            '</div>';
+          new mapboxgl.Popup({ offset: 12, maxWidth: '320px' }).setLngLat(e.lngLat).setHTML(html).addTo(map);
+        });
+
+        for (const layer of ['clusters', 'well-pins', 'agg-bubbles']) {
+          map.on('mouseenter', layer, () => { map.getCanvas().style.cursor = 'pointer'; });
+          map.on('mouseleave', layer, () => { map.getCanvas().style.cursor = ''; });
+        }
+
+        document.querySelectorAll('.chip').forEach(chip => {
+          chip.addEventListener('click', () => {
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            const partner = chip.dataset.partner;
+            if (!partner) {
+              map.getSource('wells').setData(pinsGeo);
+              map.getSource('aggs').setData(aggGeo);
+            } else {
+              map.getSource('wells').setData({
+                type: 'FeatureCollection',
+                features: pinsGeo.features.filter(f => f.properties.partner === partner),
+              });
+              map.getSource('aggs').setData({
+                type: 'FeatureCollection',
+                features: aggGeo.features.filter(f => (f.properties.partners || '').includes(partner)),
+              });
+            }
+          });
+        });
+      });
+    }
+  </script>
+</body>
+</html>
