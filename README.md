@@ -8,7 +8,7 @@ Deployed as a Render **Static Site**. Intended to be linked from (or iframed int
 | File | What | Changes? |
 |---|---|---|
 | `index.html` | The map page (Mapbox GL) | Rarely — only for design changes |
-| `wells.json` | Well data: stats + pins + country aggregates. **Donor names are stripped at generation time** — dedications only. | Every data update |
+| `wells.json` | Well data: stats + pins + country aggregates. **Donor names, dedications, costs, and partner names are stripped** — locations, types, and statuses only. | Every data update |
 | `token.js` | Mapbox public (`pk.`) token | Only if the token rotates |
 
 ## Updating the data
@@ -30,4 +30,5 @@ git add -A && git commit -m "Data update" && git push
 
 - The Mapbox token is public-type and visible by design. It should carry
   **URL restrictions** (this site's domain + hdfund.org) on account.mapbox.com.
-- Never commit donor names here. The exporter strips them; don't edit wells.json by hand.
+- Never commit donor names, dedications, costs, or partner names here. If re-exporting
+  from the exporter, re-strip those fields before pushing.

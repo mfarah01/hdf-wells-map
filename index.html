@@ -123,11 +123,6 @@
       <div class="pm-stat"><div class="v" id="stTotal">–</div><div class="l">Wells</div></div>
       <div class="pm-stat"><div class="v" id="stCompleted">–</div><div class="l">Completed</div></div>
       <div class="pm-stat"><div class="v" id="stCountries">–</div><div class="l">Countries</div></div>
-      <div class="pm-stat"><div class="v" id="stPartners">–</div><div class="l">Partners</div></div>
-      <div class="pm-stat"><div class="v" id="stCost">–</div><div class="l">Invested</div></div>
-    </div>
-    <div class="chip-row" id="chipRow">
-      <button class="chip active" data-partner="">All partners</button>
     </div>
   </div>
 
@@ -158,29 +153,16 @@
       document.getElementById('stTotal').textContent = stats.total ?? '–';
       document.getElementById('stCompleted').textContent = stats.completed ?? '–';
       document.getElementById('stCountries').textContent = stats.countries ?? '–';
-      document.getElementById('stPartners').textContent = stats.partners ?? '–';
-      document.getElementById('stCost').textContent = stats.totalCost != null ? '$' + Math.round(stats.totalCost).toLocaleString() : '–';
       document.getElementById('statsRow').style.display = '';
 
       const pinned = data.pinned || [];
       const aggregates = data.aggregates || [];
 
-      const partners = {};
-      for (const w of pinned) partners[w.partner] = w.partnerColor;
-      for (const a of aggregates) for (const p of a.partners) partners[p] = partners[p] || '#5c7893';
-      const chipRow = document.getElementById('chipRow');
       const legend = document.getElementById('mapLegend');
-      for (const [name, color] of Object.entries(partners)) {
-        const chip = document.createElement('button');
-        chip.className = 'chip';
-        chip.dataset.partner = name;
-        chip.innerHTML = '<span class="dot" style="background:' + esc(color) + '"></span>' + esc(name);
-        chipRow.appendChild(chip);
-        const li = document.createElement('span');
-        li.className = 'legend-item';
-        li.innerHTML = '<span class="legend-swatch" style="background:' + esc(color) + '"></span>' + esc(name);
-        legend.insertBefore(li, legend.firstChild);
-      }
+      const li = document.createElement('span');
+      li.className = 'legend-item';
+      li.innerHTML = '<span class="legend-swatch" style="background:#0d577f"></span> Well';
+      legend.insertBefore(li, legend.firstChild);
 
       mapboxgl.accessToken = window.MAPBOX_TOKEN || '';
       const map = new mapboxgl.Map({
@@ -200,9 +182,7 @@
           type: 'Feature',
           geometry: { type: 'Point', coordinates: [w.lng, w.lat] },
           properties: {
-            partner: w.partner, color: w.partnerColor,
             country: w.country, location: w.location || '', type: w.type || '',
-            dedication: w.dedication || '',
             status: w.status, startDate: w.startDate || '', endDate: w.endDate || '',
             beneficiaries: w.beneficiaries || '', photoLink: w.photoLink || '',
           },
@@ -215,7 +195,6 @@
           geometry: { type: 'Point', coordinates: [a.lng, a.lat] },
           properties: {
             country: a.country, count: a.count, completed: a.completed,
-            partners: a.partners.join(', '),
             wellsJson: JSON.stringify(a.wells),
           },
         })),
@@ -239,7 +218,7 @@
         map.addLayer({
           id: 'well-pins', type: 'circle', source: 'wells', filter: ['!', ['has', 'point_count']],
           paint: {
-            'circle-color': ['get', 'color'],
+            'circle-color': '#0d577f',
             'circle-radius': 8,
             'circle-stroke-width': 2, 'circle-stroke-color': '#fff',
             'circle-opacity': ['match', ['get', 'status'], 'completed', 1, 0.75],
@@ -277,11 +256,9 @@
           const p = e.features[0].properties;
           const dates = [p.startDate, p.endDate].filter(Boolean).join(' → ');
           const html =
-            '<div class="wm-pop-head">' + esc(p.dedication || p.type || 'Well') + '</div>' +
+            '<div class="wm-pop-head">' + esc(p.type || 'Well') + '</div>' +
             '<div class="wm-pop-body">' +
               '<div class="wm-pop-row"><span class="wm-pop-badge ' + esc(p.status) + '">' + esc(String(p.status).replace('_', ' ')) + '</span></div>' +
-              '<div class="wm-pop-row"><span class="lbl">Built by:</span> ' + esc(p.partner) + '</div>' +
-              '<div class="wm-pop-row"><span class="lbl">Type:</span> ' + esc(p.type || '—') + '</div>' +
               (p.location ? '<div class="wm-pop-row"><span class="lbl">Location:</span> ' + esc(p.location) + ', ' + esc(p.country) + '</div>'
                           : '<div class="wm-pop-row"><span class="lbl">Country:</span> ' + esc(p.country) + '</div>') +
               (p.beneficiaries ? '<div class="wm-pop-row"><span class="lbl">Serves:</span> ' + esc(p.beneficiaries) + '</div>' : '') +
@@ -296,12 +273,11 @@
           let wells = [];
           try { wells = JSON.parse(p.wellsJson); } catch (_) {}
           const items = wells.map(w =>
-            '<li>' + esc(w.dedication || w.type || 'Well') + (w.location ? ' <span style="color:#888;">· ' + esc(w.location) + '</span>' : '') + '</li>'
+            '<li>' + esc(w.type || 'Well') + (w.location ? ' <span style="color:#888;">· ' + esc(w.location) + '</span>' : '') + '</li>'
           ).join('');
           const html =
             '<div class="wm-pop-head">' + esc(p.country) + ' · ' + esc(p.count) + ' wells</div>' +
             '<div class="wm-pop-body">' +
-              '<div class="wm-pop-row"><span class="lbl">Built by:</span> ' + esc(p.partners) + '</div>' +
               '<div class="wm-pop-row"><span class="lbl">Completed:</span> ' + esc(p.completed) + ' of ' + esc(p.count) + '</div>' +
               (items ? '<ul class="wm-pop-list">' + items + '</ul>' : '') +
             '</div>';
@@ -312,27 +288,6 @@
           map.on('mouseenter', layer, () => { map.getCanvas().style.cursor = 'pointer'; });
           map.on('mouseleave', layer, () => { map.getCanvas().style.cursor = ''; });
         }
-
-        document.querySelectorAll('.chip').forEach(chip => {
-          chip.addEventListener('click', () => {
-            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-            chip.classList.add('active');
-            const partner = chip.dataset.partner;
-            if (!partner) {
-              map.getSource('wells').setData(pinsGeo);
-              map.getSource('aggs').setData(aggGeo);
-            } else {
-              map.getSource('wells').setData({
-                type: 'FeatureCollection',
-                features: pinsGeo.features.filter(f => f.properties.partner === partner),
-              });
-              map.getSource('aggs').setData({
-                type: 'FeatureCollection',
-                features: aggGeo.features.filter(f => (f.properties.partners || '').includes(partner)),
-              });
-            }
-          });
-        });
       });
     }
   </script>
