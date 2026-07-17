@@ -98,7 +98,17 @@
     .wm-pop-badge.completed { background: #C8E6C9; color: #1b5e20; }
     .wm-pop-badge.in_progress { background: #FFF3E0; color: #8a5300; }
     .wm-pop-badge.planned { background: #E3F2FD; color: #0d477f; }
-    .wm-pop-photos { display: inline-block; margin-top: .35rem; font-weight: 600; color: var(--hdf-primary); }
+    .wm-pop-img {
+      display: block; width: 100%; height: 170px; object-fit: cover;
+      border-radius: 8px; margin-bottom: .55rem; background: #eef1f4;
+    }
+    .wm-pop-btn {
+      display: block; text-align: center; margin-top: .55rem;
+      background: var(--hdf-primary); color: #fff; text-decoration: none;
+      padding: .5rem .75rem; border-radius: 8px; font-weight: 600; font-size: .8rem;
+      transition: background .15s ease;
+    }
+    .wm-pop-btn:hover { background: var(--hdf-primary-dark); }
     .wm-pop-list { margin: .3rem 0 0; padding-left: 1rem; max-height: 150px; overflow-y: auto; }
     .wm-pop-list li { margin-bottom: .2rem; }
 
@@ -182,6 +192,7 @@
           type: 'Feature',
           geometry: { type: 'Point', coordinates: [w.lng, w.lat] },
           properties: {
+            id: w.id,
             country: w.country, location: w.location || '', type: w.type || '',
             status: w.status, startDate: w.startDate || '', endDate: w.endDate || '',
             beneficiaries: w.beneficiaries || '', photoLink: w.photoLink || '',
@@ -255,15 +266,18 @@
         map.on('click', 'well-pins', (e) => {
           const p = e.features[0].properties;
           const dates = [p.startDate, p.endDate].filter(Boolean).join(' → ');
+          const title = p.location && p.location !== p.country
+            ? p.location + ', ' + p.country : p.country;
+          const photoSrc = 'photos/' + encodeURIComponent(p.id) + '.jpg';
           const html =
-            '<div class="wm-pop-head">' + esc(p.type || 'Well') + '</div>' +
+            '<div class="wm-pop-head">' + esc(title) + '</div>' +
             '<div class="wm-pop-body">' +
+              '<img class="wm-pop-img" src="' + esc(photoSrc) + '" alt="" onerror="this.remove()">' +
               '<div class="wm-pop-row"><span class="wm-pop-badge ' + esc(p.status) + '">' + esc(String(p.status).replace('_', ' ')) + '</span></div>' +
-              (p.location ? '<div class="wm-pop-row"><span class="lbl">Location:</span> ' + esc(p.location) + ', ' + esc(p.country) + '</div>'
-                          : '<div class="wm-pop-row"><span class="lbl">Country:</span> ' + esc(p.country) + '</div>') +
+              '<div class="wm-pop-row"><span class="lbl">Type:</span> ' + esc(p.type || '—') + '</div>' +
               (p.beneficiaries ? '<div class="wm-pop-row"><span class="lbl">Serves:</span> ' + esc(p.beneficiaries) + '</div>' : '') +
               (dates ? '<div class="wm-pop-row"><span class="lbl">Built:</span> ' + esc(dates) + '</div>' : '') +
-              (p.photoLink ? '<a class="wm-pop-photos" href="' + esc(p.photoLink) + '" target="_blank" rel="noopener noreferrer">View photos ↗</a>' : '') +
+              (p.photoLink ? '<a class="wm-pop-btn" href="' + esc(p.photoLink) + '" target="_blank" rel="noopener noreferrer">View photos</a>' : '') +
             '</div>';
           new mapboxgl.Popup({ offset: 12 }).setLngLat(e.lngLat).setHTML(html).addTo(map);
         });

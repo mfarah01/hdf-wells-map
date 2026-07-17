@@ -54,7 +54,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "Alya Masour/Rusara, Burundi",
+   "photoLink": null,
    "lat": -2.45947,
    "lng": 30.404817
   },
@@ -67,7 +67,7 @@
    "startDate": "2026-02-01",
    "endDate": "2026-03-14",
    "beneficiaries": null,
-   "photoLink": "Ajmal Nizamuddin: Menagesha Ethiopia",
+   "photoLink": null,
    "lat": 9.064675,
    "lng": 38.576541
   },
@@ -80,7 +80,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "Samina Mansoor",
+   "photoLink": null,
    "lat": 8.550378,
    "lng": 43.44928
   },
@@ -93,7 +93,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "150",
-   "photoLink": "Husna Perecha",
+   "photoLink": null,
    "lat": 1.677998,
    "lng": 44.719386
   },
@@ -106,7 +106,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "A Chawdry",
+   "photoLink": null,
    "lat": 4.8388,
    "lng": 45.2148
   },
@@ -119,7 +119,7 @@
    "startDate": "2024-05-01",
    "endDate": "2024-06-01",
    "beneficiaries": "180 Households",
-   "photoLink": "Ahmad Amin",
+   "photoLink": null,
    "lat": 1.725556,
    "lng": 40.036667
   },
@@ -132,7 +132,7 @@
    "startDate": "2025-01-01",
    "endDate": "2025-02-01",
    "beneficiaries": "160 Households",
-   "photoLink": "Zaheer family",
+   "photoLink": null,
    "lat": 1.729167,
    "lng": 40.038889
   },
@@ -145,7 +145,7 @@
    "startDate": "2025-02-01",
    "endDate": "2025-03-01",
    "beneficiaries": "170 Households",
-   "photoLink": "Maaz Family",
+   "photoLink": null,
    "lat": 1.728611,
    "lng": 40.045
   },
@@ -158,7 +158,7 @@
    "startDate": "2025-02-01",
    "endDate": "2025-03-01",
    "beneficiaries": "190 Households",
-   "photoLink": "sayed waqas family",
+   "photoLink": null,
    "lat": 1.771944,
    "lng": 40.082222
   },
@@ -171,7 +171,7 @@
    "startDate": "2025-12-17",
    "endDate": "2026-02-02",
    "beneficiaries": "300 Students & 70 Households",
-   "photoLink": "Hanif Zuhair: Wajir",
+   "photoLink": null,
    "lat": 1.69947,
    "lng": 40.001383
   },
@@ -184,7 +184,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "150 household",
-   "photoLink": "Bassem Elkhatib",
+   "photoLink": null,
    "lat": 0.527549,
    "lng": 38.51209
   },
@@ -197,7 +197,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "100 Household",
-   "photoLink": "HDF Sadaqah Jariyah 1",
+   "photoLink": null,
    "lat": -2.37904,
    "lng": 40.43856
   },
@@ -210,7 +210,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "80 Household",
-   "photoLink": "HDF Sadaqah Jariyah 2/Kinna, Isiolo",
+   "photoLink": null,
    "lat": 0.320134,
    "lng": 38.197101
   },
@@ -223,7 +223,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "Ihab 1",
+   "photoLink": null,
    "lat": 1.5885,
    "lng": 37.802472
   },
@@ -236,7 +236,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "Ihab 2",
+   "photoLink": null,
    "lat": 2.048463,
    "lng": 37.423817
   },
@@ -249,7 +249,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "64",
-   "photoLink": "Kyrie Irving 1",
+   "photoLink": null,
    "lat": 0.036861,
    "lng": 34.827889
   },
@@ -262,7 +262,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "250",
-   "photoLink": "Kyrie Irving 2",
+   "photoLink": null,
    "lat": -4.126194,
    "lng": 39.623083
   },
@@ -275,7 +275,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "57",
-   "photoLink": "Mahir Patel",
+   "photoLink": null,
    "lat": 3.558962,
    "lng": 39.049675
   },
@@ -288,7 +288,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "500",
-   "photoLink": "Younas Family",
+   "photoLink": null,
    "lat": 3.947417,
    "lng": 41.652889
   },
@@ -301,7 +301,7 @@
    "startDate": "2025-07-05",
    "endDate": "2025-05-01",
    "beneficiaries": "150 Households",
-   "photoLink": "Abdirahman Maxamud Dualeh 1",
+   "photoLink": null,
    "lat": 9.738815,
    "lng": 44.465536
   },
@@ -314,7 +314,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "Najmaunisa Khanum",
+   "photoLink": null,
    "lat": 15.295457,
    "lng": 36.476311
   },
@@ -327,7 +327,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "Al Dabbah/Sudan",
+   "photoLink": null,
    "lat": 18.054394,
    "lng": 30.938408
   },
@@ -340,7 +340,7 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "Dongola/Sudan",
+   "photoLink": null,
    "lat": 19.175886,
    "lng": 30.457448
   },
@@ -353,7 +353,7 @@
    "startDate": null,
    "endDate": null,
    "beneficiaries": null,
-   "photoLink": "Naveed Murtuza Khan - Witu",
+   "photoLink": null,
    "lat": -2.340895,
    "lng": 40.388067
   },
@@ -366,7 +366,7 @@
    "startDate": null,
    "endDate": null,
    "beneficiaries": null,
-   "photoLink": "Hodda Muraywid - Witu",
+   "photoLink": null,
    "lat": -2.340914,
    "lng": 40.388038
   },
