@@ -266,8 +266,8 @@
         map.on('click', 'well-pins', (e) => {
           const p = e.features[0].properties;
           const dates = [p.startDate, p.endDate].filter(Boolean).join(' → ');
-          const title = p.location && p.location !== p.country
-            ? p.location + ', ' + p.country : p.country;
+          const title = !p.location || p.location === p.country || p.location.endsWith(p.country)
+            ? (p.location || p.country) : p.location + ', ' + p.country;
           const photoSrc = 'photos/' + encodeURIComponent(p.id) + '.jpg';
           const html =
             '<div class="wm-pop-head">' + esc(title) + '</div>' +
