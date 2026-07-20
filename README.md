@@ -29,4 +29,7 @@ git add -A && git commit -m "Data update" && git push
 
 ## Notes
 
+- The public map shows **completed wells only**. A fresh export includes in-progress and
+  planned wells (and donor fields) — re-filter to completed and re-strip donor names,
+  dedications, costs, and partner names before pushing.
 

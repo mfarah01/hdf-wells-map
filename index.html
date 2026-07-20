@@ -130,8 +130,7 @@
     </div>
 
     <div class="pm-stats" id="statsRow" style="display:none;">
-      <div class="pm-stat"><div class="v" id="stTotal">–</div><div class="l">Wells</div></div>
-      <div class="pm-stat"><div class="v" id="stCompleted">–</div><div class="l">Completed</div></div>
+      <div class="pm-stat"><div class="v" id="stTotal">–</div><div class="l">Wells Built</div></div>
       <div class="pm-stat"><div class="v" id="stCountries">–</div><div class="l">Countries</div></div>
     </div>
   </div>
@@ -161,7 +160,6 @@
 
       const stats = data.stats || {};
       document.getElementById('stTotal').textContent = stats.total ?? '–';
-      document.getElementById('stCompleted').textContent = stats.completed ?? '–';
       document.getElementById('stCountries').textContent = stats.countries ?? '–';
       document.getElementById('statsRow').style.display = '';
 
@@ -292,7 +290,6 @@
           const html =
             '<div class="wm-pop-head">' + esc(p.country) + ' · ' + esc(p.count) + ' wells</div>' +
             '<div class="wm-pop-body">' +
-              '<div class="wm-pop-row"><span class="lbl">Completed:</span> ' + esc(p.completed) + ' of ' + esc(p.count) + '</div>' +
               (items ? '<ul class="wm-pop-list">' + items + '</ul>' : '') +
             '</div>';
           new mapboxgl.Popup({ offset: 12, maxWidth: '320px' }).setLngLat(e.lngLat).setHTML(html).addTo(map);
