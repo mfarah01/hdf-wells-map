@@ -192,6 +192,7 @@
           properties: {
             id: w.id,
             country: w.country, location: w.location || '', type: w.type || '',
+            depth: w.depth || '', system: w.system || '',
             status: w.status, startDate: w.startDate || '', endDate: w.endDate || '',
             beneficiaries: w.beneficiaries || '', photoLink: w.photoLink || '',
           },
@@ -273,6 +274,8 @@
               '<img class="wm-pop-img" src="' + esc(photoSrc) + '" alt="" onerror="this.remove()">' +
               '<div class="wm-pop-row"><span class="wm-pop-badge ' + esc(p.status) + '">' + esc(String(p.status).replace('_', ' ')) + '</span></div>' +
               '<div class="wm-pop-row"><span class="lbl">Type:</span> ' + esc(p.type || '—') + '</div>' +
+              (p.system ? '<div class="wm-pop-row"><span class="lbl">Pump:</span> ' + esc(p.system) + '</div>' : '') +
+              (p.depth ? '<div class="wm-pop-row"><span class="lbl">Depth:</span> ' + esc(p.depth) + '</div>' : '') +
               (p.beneficiaries ? '<div class="wm-pop-row"><span class="lbl">Serves:</span> ' + esc(p.beneficiaries) + '</div>' : '') +
               (dates ? '<div class="wm-pop-row"><span class="lbl">Built:</span> ' + esc(dates) + '</div>' : '') +
               (p.photoLink ? '<a class="wm-pop-btn" href="' + esc(p.photoLink) + '" target="_blank" rel="noopener noreferrer">View photos</a>' : '') +
@@ -284,9 +287,11 @@
           const p = e.features[0].properties;
           let wells = [];
           try { wells = JSON.parse(p.wellsJson); } catch (_) {}
-          const items = wells.map(w =>
-            '<li>' + esc(w.type || 'Well') + (w.location ? ' <span style="color:#888;">· ' + esc(w.location) + '</span>' : '') + '</li>'
-          ).join('');
+          const items = wells.map(w => {
+            const detail = [w.system || w.type, w.depth].filter(Boolean).join(', ');
+            return '<li>' + esc(w.location || w.type || 'Well') +
+              (detail ? ' <span style="color:#888;">· ' + esc(detail) + '</span>' : '') + '</li>';
+          }).join('');
           const html =
             '<div class="wm-pop-head">' + esc(p.country) + ' · ' + esc(p.count) + ' wells</div>' +
             '<div class="wm-pop-body">' +

@@ -30,7 +30,8 @@
    "beneficiaries": null,
    "photoLink": null,
    "lat": -2.45947,
-   "lng": 30.404817
+   "lng": 30.404817,
+   "system": "Hand Pump"
   },
   {
    "id": "HDF ETH 2025 001",
@@ -43,7 +44,8 @@
    "beneficiaries": null,
    "photoLink": null,
    "lat": 9.064675,
-   "lng": 38.576541
+   "lng": 38.576541,
+   "system": "Hand Pump"
   },
   {
    "id": "HDF ETH 2026 005",
@@ -56,7 +58,8 @@
    "beneficiaries": null,
    "photoLink": null,
    "lat": 8.550378,
-   "lng": 43.44928
+   "lng": 43.44928,
+   "system": "Hand Pump"
   },
   {
    "id": "HDF SO 2026 001",
@@ -69,7 +72,8 @@
    "beneficiaries": "150",
    "photoLink": null,
    "lat": 1.677998,
-   "lng": 44.719386
+   "lng": 44.719386,
+   "system": "Hand Pump"
   },
   {
    "id": "HDF KE 2024 001",
@@ -82,7 +86,9 @@
    "beneficiaries": "180 Households",
    "photoLink": null,
    "lat": 1.725556,
-   "lng": 40.036667
+   "lng": 40.036667,
+   "depth": "49 ft",
+   "system": "India Mark II"
   },
   {
    "id": "HDF KE 2025 002",
@@ -95,7 +101,9 @@
    "beneficiaries": "160 Households",
    "photoLink": null,
    "lat": 1.729167,
-   "lng": 40.038889
+   "lng": 40.038889,
+   "depth": "46 ft",
+   "system": "India Mark II"
   },
   {
    "id": "HDF KE 2025 003",
@@ -108,7 +116,9 @@
    "beneficiaries": "170 Households",
    "photoLink": null,
    "lat": 1.728611,
-   "lng": 40.045
+   "lng": 40.045,
+   "depth": "52 ft",
+   "system": "India Mark II"
   },
   {
    "id": "HDF KE 2025 004",
@@ -121,7 +131,9 @@
    "beneficiaries": "190 Households",
    "photoLink": null,
    "lat": 1.771944,
-   "lng": 40.082222
+   "lng": 40.082222,
+   "depth": "60 ft",
+   "system": "India Mark II"
   },
   {
    "id": "HDF KE 2025 008",
@@ -134,7 +146,9 @@
    "beneficiaries": "300 Students & 70 Households",
    "photoLink": null,
    "lat": 1.69947,
-   "lng": 40.001383
+   "lng": 40.001383,
+   "depth": "27 ft",
+   "system": "India Mark II"
   },
   {
    "id": "HDF KE 2026 024",
@@ -147,7 +161,8 @@
    "beneficiaries": "150 household",
    "photoLink": null,
    "lat": 0.527549,
-   "lng": 38.51209
+   "lng": 38.51209,
+   "system": "Solar submersible"
   },
   {
    "id": "HDF KE 2026 025",
@@ -160,7 +175,8 @@
    "beneficiaries": "100 Household",
    "photoLink": null,
    "lat": -2.37904,
-   "lng": 40.43856
+   "lng": 40.43856,
+   "system": "Solar submersible"
   },
   {
    "id": "HDF KE 2026 026",
@@ -173,7 +189,8 @@
    "beneficiaries": "80 Household",
    "photoLink": null,
    "lat": 0.320134,
-   "lng": 38.197101
+   "lng": 38.197101,
+   "system": "Solar submersible"
   },
   {
    "id": "HDF KE 2026 029",
@@ -186,7 +203,8 @@
    "beneficiaries": null,
    "photoLink": null,
    "lat": 1.5885,
-   "lng": 37.802472
+   "lng": 37.802472,
+   "system": "Solar submersible"
   },
   {
    "id": "HDF KE 2026 030",
@@ -199,7 +217,8 @@
    "beneficiaries": null,
    "photoLink": null,
    "lat": 2.048463,
-   "lng": 37.423817
+   "lng": 37.423817,
+   "system": "Solar submersible"
   },
   {
    "id": "HDF KE 2026 031",
@@ -212,7 +231,8 @@
    "beneficiaries": "64",
    "photoLink": null,
    "lat": 0.036861,
-   "lng": 34.827889
+   "lng": 34.827889,
+   "system": "Hand Pump"
   },
   {
    "id": "HDF KE 2026 032",
@@ -225,7 +245,8 @@
    "beneficiaries": "250",
    "photoLink": null,
    "lat": -4.126194,
-   "lng": 39.623083
+   "lng": 39.623083,
+   "system": "Solar submersible"
   },
   {
    "id": "HDF KE 2026 033",
@@ -238,7 +259,8 @@
    "beneficiaries": "57",
    "photoLink": null,
    "lat": 3.558962,
-   "lng": 39.049675
+   "lng": 39.049675,
+   "system": "Hand Pump"
   },
   {
    "id": "HDF SL 2025 001",
@@ -251,7 +273,9 @@
    "beneficiaries": "150 Households",
    "photoLink": null,
    "lat": 9.738815,
-   "lng": 44.465536
+   "lng": 44.465536,
+   "depth": "43 ft",
+   "system": "Hand pulley"
   },
   {
    "id": "HDF SUD 2026 001",
@@ -264,7 +288,8 @@
    "beneficiaries": null,
    "photoLink": null,
    "lat": 15.295457,
-   "lng": 36.476311
+   "lng": 36.476311,
+   "system": "Hand Pump"
   }
  ],
  "aggregates": [
@@ -276,17 +301,20 @@
     {
      "type": "Intermediate (35 meters)",
      "location": "QALA-E-AKHOUND K-12 SCHOOL.",
-     "status": "completed"
+     "status": "completed",
+     "depth": "35 m"
     },
     {
      "type": "Intermediate (35 meters)",
      "location": "KAMA DISTRICT, BYLAYARI",
-     "status": "completed"
+     "status": "completed",
+     "depth": "35 m"
     },
     {
      "type": "Large (150 meters)",
      "location": "KAMA DISTRICT, Totkay Village",
-     "status": "completed"
+     "status": "completed",
+     "depth": "150 m"
     }
    ],
    "lat": 34.5,
@@ -314,12 +342,14 @@
     {
      "type": "Hand pumped",
      "location": "Wetabecha Minjaro, Ethiopia",
-     "status": "completed"
+     "status": "completed",
+     "system": "Hand Pump"
     },
     {
      "type": "Shallow well",
      "location": "Sheekh Abdisalaan Kebeles, Ethiopia",
-     "status": "completed"
+     "status": "completed",
+     "system": "Hand Pump"
     },
     {
      "type": "Hand pumped",
@@ -338,62 +368,83 @@
     {
      "type": "Hand pumped",
      "location": "Weremba Secondary School, Kakamega, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "68.5 ft",
+     "system": "India Mark II"
     },
     {
      "type": "Hand pumped",
      "location": "Nambale Muslim Primary, Busia County, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "65.7 ft",
+     "system": "Hand pump"
     },
     {
      "type": "Hand pulley",
      "location": "Mtendeni, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "42 ft",
+     "system": "Hand pulley"
     },
     {
      "type": "Solar powered",
      "location": "Mirere village, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "43 ft",
+     "system": "Solar submersible"
     },
     {
      "type": "Hand pumped",
      "location": "Witu Furaha Primary School, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "65 ft",
+     "system": "India Mark II"
     },
     {
      "type": "Hand pumped",
      "location": "Witu Kijijini, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "80 ft",
+     "system": "Afidrev Deep Well"
     },
     {
      "type": "Hand pumped",
      "location": "Lunalo, Bumula Town, Bungoma,Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "30 ft",
+     "system": "India Mark II"
     },
     {
      "type": "Hand pumped",
      "location": "Afarshanle Primary School, Wajir, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "23 ft",
+     "system": "India Mark II"
     },
     {
      "type": "Hand pumped",
      "location": "Myanga, Khasoko, Bungoma, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "30 ft",
+     "system": "India Mark II"
     },
     {
      "type": "Solar powered",
      "location": "Matungu",
-     "status": "completed"
+     "status": "completed",
+     "system": "India Mark II"
     },
     {
      "type": "Solar powered",
      "location": "Garbatula, Isiolo, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "system": "Solar"
     },
     {
      "type": "Solar powered",
      "location": "Garbatula, Isiolo, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "system": "Solar"
     }
    ],
    "lat": 0.4,
@@ -407,17 +458,23 @@
     {
      "type": "Hand pumped",
      "location": "Beledweyn, Somalia",
-     "status": "completed"
+     "status": "completed",
+     "depth": "65 ft",
+     "system": "Afridev pump"
     },
     {
      "type": "Hand pumped",
      "location": "Howl Wadaag, Somalia",
-     "status": "completed"
+     "status": "completed",
+     "depth": "72 ft",
+     "system": "India Mark II"
     },
     {
      "type": "Hand pumped",
      "location": "Kismayo, Somalia",
-     "status": "completed"
+     "status": "completed",
+     "depth": "60 ft",
+     "system": "Afridev pump"
     }
    ],
    "lat": 5.2,
@@ -431,12 +488,14 @@
     {
      "type": "Shallow well",
      "location": "Singida, Tanzania",
-     "status": "completed"
+     "status": "completed",
+     "system": "Hand Pump"
     },
     {
      "type": "Solar powered",
      "location": "Arusha,Tanzania",
-     "status": "completed"
+     "status": "completed",
+     "system": "Hand Pump"
     }
    ],
    "lat": -6.4,
@@ -450,7 +509,8 @@
     {
      "type": "Hand pumped",
      "location": "Banika Islamic Primary School, Uganda",
-     "status": "completed"
+     "status": "completed",
+     "system": "Hand Pump"
     }
    ],
    "lat": 1.4,
