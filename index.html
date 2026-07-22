@@ -377,7 +377,6 @@
           const html =
             '<div class="wm-pop-head">' + esc(wellTitle(p)) + '</div>' +
             '<div class="wm-pop-body">' +
-              '<img class="wm-pop-img" src="' + esc(wellPhoto(p)) + '" alt="" onerror="this.remove()">' +
               '<div class="wm-pop-row"><span class="wm-pop-badge ' + esc(p.status) + '">' + esc(String(p.status).replace('_', ' ')) + '</span></div>' +
               '<div class="wm-pop-row"><span class="lbl">Type:</span> ' + esc(p.type || '—') + '</div>' +
               (p.system ? '<div class="wm-pop-row"><span class="lbl">Pump:</span> ' + esc(p.system) + '</div>' : '') +
@@ -394,7 +393,6 @@
           drawerEl.innerHTML =
             '<div class="wm-drawer-photo">' +
               '<button class="wm-drawer-close" aria-label="Close">×</button>' +
-              '<img src="' + esc(wellPhoto(p)) + '" alt="" onerror="this.style.display=\'none\'">' +
             '</div>' +
             '<div class="wm-drawer-body">' +
               '<div class="wm-eyebrow">' + esc(p.country) + ' · Well #' + esc(p.id) + '</div>' +
@@ -422,7 +420,6 @@
             '<div class="wm-modal">' +
               '<div class="wm-modal-photo">' +
                 '<button class="wm-modal-close" aria-label="Close">×</button>' +
-                '<img src="' + esc(wellPhoto(p)) + '" alt="" onerror="this.style.display=\'none\'">' +
               '</div>' +
               '<div class="wm-modal-body">' +
                 '<div class="wm-modal-eyebrow">' + esc(p.country) + ' · Well #' + esc(p.id) + '</div>' +
