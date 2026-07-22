@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Well Card Prototypes — HDF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --hdf-primary: #0d577f;
+      --hdf-primary-dark: #0d3e58;
+      --hdf-gold: #eecd25;
+      --hdf-text: #393939;
+      --hdf-text-light: #666;
+      --hdf-border: #e5e9ee;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      color: var(--hdf-text);
+      background: #eef1f4;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+    .page-head {
+      max-width: 1400px; margin: 0 auto 2rem;
+    }
+    .page-head h1 { font-size: 1.6rem; font-weight: 700; color: var(--hdf-primary-dark); }
+    .page-head p { color: var(--hdf-text-light); margin-top: .3rem; font-size: .9rem; }
+    .grid {
+      max-width: 1400px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem;
+    }
+    .variant {
+      background: #fff; border-radius: 14px; padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .variant-label {
+      display: flex; align-items: baseline; gap: .6rem;
+      margin-bottom: 1rem; padding-bottom: .8rem;
+      border-bottom: 1px solid var(--hdf-border);
+    }
+    .variant-label .num {
+      background: var(--hdf-primary); color: #fff;
+      width: 26px; height: 26px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .8rem;
+    }
+    .variant-label h2 { font-size: 1.1rem; font-weight: 700; }
+    .variant-label .tag { margin-left: auto; font-size: .72rem; color: var(--hdf-text-light); }
+    .stage {
+      background: #cfd8e0;
+      background-image:
+        radial-gradient(circle at 20% 40%, #a8bcc8 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, #b8c9d3 0%, transparent 50%);
+      border-radius: 10px; padding: 1.5rem; position: relative;
+      min-height: 460px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .stage::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(90deg, transparent 49%, rgba(255,255,255,.15) 49%, rgba(255,255,255,.15) 51%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, rgba(255,255,255,.15) 49%, rgba(255,255,255,.15) 51%, transparent 51%);
+      background-size: 40px 40px;
+      opacity: .4;
+    }
+    .stage-note {
+      position: absolute; top: 10px; left: 12px;
+      font-size: .68rem; color: rgba(0,0,0,.4); font-weight: 500;
+      letter-spacing: .04em; text-transform: uppercase;
+    }
+    .fake-pin {
+      position: absolute; width: 14px; height: 14px;
+      background: var(--hdf-primary); border: 2px solid #fff; border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,.3);
+    }
+
+    /* Shared photo styles */
+    .photo-hero {
+      width: 100%; aspect-ratio: 16/10; border-radius: 8px 8px 0 0;
+      background-image: url('photos/AFG-001.jpg');
+      background-size: cover; background-position: center;
+      position: relative; overflow: hidden;
+    }
+    .photo-hero.rounded { border-radius: 8px; }
+
+    .status-badge {
+      display: inline-block; padding: .15rem .55rem; border-radius: 999px;
+      font-size: .66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+      background: #C8E6C9; color: #1b5e20;
+    }
+
+    /* ────────────────────────────────────────────
+       VARIANT 1 — Enhanced In-Map Popup
+       ──────────────────────────────────────────── */
+    .v1-card {
+      width: 300px;
+      background: #fff; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+      font-size: .82rem;
+      position: relative;
+    }
+    .v1-card::after {
+      content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+      width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent;
+      border-top: 8px solid #fff;
+    }
+    .v1-photo { position: relative; }
+    .v1-photo .photo-hero { border-radius: 0; aspect-ratio: 16/9; }
+    .v1-body { padding: .85rem 1rem 1rem; }
+    .v1-title-row {
+      display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+      margin-bottom: .5rem;
+    }
+    .v1-title { font-size: 1rem; font-weight: 700; color: var(--hdf-primary-dark); line-height: 1.25; }
+    .v1-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: .5rem;
+      background: #f5f8fa; border-radius: 8px; padding: .55rem;
+      margin-bottom: .7rem;
+    }
+    .v1-stats .stat { text-align: center; }
+    .v1-stats .stat .v {
+      font-size: 1.15rem; font-weight: 800; color: var(--hdf-primary);
+      font-variant-numeric: tabular-nums; line-height: 1;
+    }
+    .v1-stats .stat .l {
+      font-size: .62rem; text-transform: uppercase; letter-spacing: .05em;
+      color: var(--hdf-text-light); margin-top: .2rem;
+    }
+    .v1-meta { display: flex; flex-direction: column; gap: .25rem; font-size: .78rem; }
+    .v1-meta .row { display: flex; justify-content: space-between; }
+    .v1-meta .lbl { color: var(--hdf-text-light); }
+    .v1-meta .val { font-weight: 600; }
+
+    /* ────────────────────────────────────────────
+       VARIANT 2 — Right-side Drawer
+       ──────────────────────────────────────────── */
+    .v2-stage { padding: 0; }
+    .v2-drawer {
+      position: absolute; right: 0; top: 0; bottom: 0;
+      width: 340px; background: #fff;
+      box-shadow: -8px 0 24px rgba(0,0,0,.15);
+      display: flex; flex-direction: column;
+      overflow: hidden;
+    }
+    .v2-drawer .photo-hero { border-radius: 0; aspect-ratio: 4/3; flex-shrink: 0; }
+    .v2-close {
+      position: absolute; top: 10px; left: 10px;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,.9); border: none; cursor: pointer;
+      font-size: 1.1rem; color: var(--hdf-text);
+      display: inline-flex; align-items: center; justify-content: center;
+      z-index: 2;
+    }
+    .v2-body { padding: 1.1rem 1.2rem; overflow-y: auto; flex: 1; }
+    .v2-eyebrow {
+      font-size: .65rem; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--hdf-primary); font-weight: 700; margin-bottom: .3rem;
+    }
+    .v2-title { font-size: 1.25rem; font-weight: 700; color: var(--hdf-primary-dark); line-height: 1.2; margin-bottom: .6rem; }
+    .v2-stat-row {
+      display: flex; gap: 1.5rem; padding: .8rem 0;
+      border-top: 1px solid var(--hdf-border);
+      border-bottom: 1px solid var(--hdf-border);
+      margin: .8rem 0;
+    }
+    .v2-stat .v { font-size: 1.4rem; font-weight: 800; color: var(--hdf-primary); line-height: 1; }
+    .v2-stat .l { font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; color: var(--hdf-text-light); margin-top: .25rem; }
+    .v2-detail-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+    .v2-detail-list li {
+      display: flex; justify-content: space-between; font-size: .82rem;
+      padding: .2rem 0;
+    }
+    .v2-detail-list .lbl { color: var(--hdf-text-light); }
+    .v2-detail-list .val { font-weight: 600; }
+
+    /* ────────────────────────────────────────────
+       VARIANT 3 — Bottom Floating Card (Google-style)
+       ──────────────────────────────────────────── */
+    .v3-card {
+      position: absolute; bottom: 20px; left: 20px; right: 20px;
+      background: #fff; border-radius: 14px; overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,.2);
+      display: flex; max-height: 180px;
+    }
+    .v3-photo {
+      width: 200px; flex-shrink: 0; position: relative;
+    }
+    .v3-photo .photo-hero { border-radius: 0; height: 100%; aspect-ratio: unset; }
+    .v3-body { padding: 1rem 1.2rem; flex: 1; display: flex; flex-direction: column; min-width: 0; }
+    .v3-top { display: flex; align-items: flex-start; justify-content: space-between; gap: .5rem; margin-bottom: .5rem; }
+    .v3-title { font-size: 1.05rem; font-weight: 700; color: var(--hdf-primary-dark); line-height: 1.2; }
+    .v3-sub { font-size: .72rem; color: var(--hdf-text-light); margin-top: .1rem; }
+    .v3-stats {
+      display: flex; gap: 1.3rem; margin: .3rem 0 .5rem;
+    }
+    .v3-stats .stat .v { font-size: 1.15rem; font-weight: 800; color: var(--hdf-primary); line-height: 1; }
+    .v3-stats .stat .l { font-size: .62rem; text-transform: uppercase; letter-spacing: .05em; color: var(--hdf-text-light); margin-top: .18rem; }
+    .v3-chips { display: flex; gap: .35rem; flex-wrap: wrap; margin-top: auto; }
+    .v3-chip {
+      background: #f0f4f7; color: var(--hdf-primary-dark);
+      font-size: .68rem; padding: .22rem .55rem; border-radius: 999px; font-weight: 600;
+      display: inline-flex; align-items: center; gap: .3rem;
+    }
+    .v3-close {
+      position: absolute; top: 8px; right: 8px;
+      width: 26px; height: 26px; border-radius: 50%;
+      background: rgba(255,255,255,.95); border: none; cursor: pointer;
+      font-size: .95rem; color: var(--hdf-text);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+
+    /* ────────────────────────────────────────────
+       VARIANT 4 — Editorial Modal
+       ──────────────────────────────────────────── */
+    .v4-stage { background: rgba(13, 62, 88, .55); background-image: none; }
+    .v4-stage::before { display: none; }
+    .v4-modal {
+      width: 88%; max-width: 520px;
+      background: #fff; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    }
+    .v4-photo { position: relative; }
+    .v4-photo .photo-hero { border-radius: 0; aspect-ratio: 21/9; }
+    .v4-photo .status-badge {
+      position: absolute; top: 12px; right: 12px;
+      background: rgba(255,255,255,.95); color: #1b5e20;
+    }
+    .v4-body { padding: 1.3rem 1.5rem 1.5rem; }
+    .v4-eyebrow {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .7rem; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--hdf-text-light); font-weight: 600; margin-bottom: .3rem;
+    }
+    .v4-eyebrow .flag { font-size: 1rem; }
+    .v4-title { font-size: 1.4rem; font-weight: 700; color: var(--hdf-primary-dark); line-height: 1.2; margin-bottom: 1rem; }
+    .v4-impact {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .75rem;
+      padding: 1rem; background: linear-gradient(135deg, #f5f8fa 0%, #eaf1f5 100%);
+      border-radius: 12px; margin-bottom: 1rem;
+    }
+    .v4-impact .stat { text-align: center; }
+    .v4-impact .stat .v {
+      font-size: 1.5rem; font-weight: 800; color: var(--hdf-primary);
+      font-variant-numeric: tabular-nums; line-height: 1;
+    }
+    .v4-impact .stat .l {
+      font-size: .62rem; text-transform: uppercase; letter-spacing: .06em;
+      color: var(--hdf-text-light); margin-top: .3rem; line-height: 1.2;
+    }
+    .v4-details {
+      display: grid; grid-template-columns: 1fr 1fr; gap: .5rem 1.5rem;
+      font-size: .82rem;
+    }
+    .v4-details .row { display: flex; justify-content: space-between; padding: .25rem 0; border-bottom: 1px dashed var(--hdf-border); }
+    .v4-details .lbl { color: var(--hdf-text-light); }
+    .v4-details .val { font-weight: 600; }
+    .v4-close {
+      position: absolute; top: 12px; left: 12px;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(0,0,0,.5); color: #fff; border: none; cursor: pointer;
+      font-size: 1.1rem;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-head">
+    <h1>Well Card Prototypes</h1>
+    <p>Four interaction/layout options for the well detail card. All use the real Afghanistan (AFG-001) photo with the donor names redacted in-image. Mock data: 500 people · 80 households · 45m depth.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- ═══════════════ VARIANT 1 ═══════════════ -->
+    <div class="variant">
+      <div class="variant-label">
+        <span class="num">1</span>
+        <h2>Enhanced In-Map Popup</h2>
+        <span class="tag">Closest to today · lowest lift</span>
+      </div>
+      <div class="stage">
+        <div class="stage-note">Popup anchored to pin · map behind</div>
+        <div class="fake-pin" style="top: 62%; left: 30%;"></div>
+        <div class="v1-card" style="margin-top: -60px;">
+          <div class="v1-photo">
+            <div class="photo-hero"></div>
+          </div>
+          <div class="v1-body">
+            <div class="v1-title-row">
+              <div class="v1-title">Qala-e-Akhound, Afghanistan</div>
+              <span class="status-badge">Completed</span>
+            </div>
+            <div class="v1-stats">
+              <div class="stat"><div class="v">500</div><div class="l">People served</div></div>
+              <div class="stat"><div class="v">80</div><div class="l">Households</div></div>
+            </div>
+            <div class="v1-meta">
+              <div class="row"><span class="lbl">Type</span><span class="val">Hand pump</span></div>
+              <div class="row"><span class="lbl">Depth</span><span class="val">45 m</span></div>
+              <div class="row"><span class="lbl">Built</span><span class="val">Nov 2025</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ VARIANT 2 ═══════════════ -->
+    <div class="variant">
+      <div class="variant-label">
+        <span class="num">2</span>
+        <h2>Right-side Drawer</h2>
+        <span class="tag">Most room for story + gallery</span>
+      </div>
+      <div class="stage v2-stage">
+        <div class="stage-note" style="color: rgba(255,255,255,.75);">Slides in from right · map stays visible</div>
+        <div class="fake-pin" style="top: 50%; left: 25%;"></div>
+        <div class="v2-drawer">
+          <div class="v2-drawer-photo" style="position: relative;">
+            <div class="photo-hero"></div>
+            <button class="v2-close">×</button>
+          </div>
+          <div class="v2-body">
+            <div class="v2-eyebrow">Afghanistan · Well #AFG-001</div>
+            <div class="v2-title">Qala-e-Akhound K–12 School Well</div>
+            <span class="status-badge">Completed</span>
+            <div class="v2-stat-row">
+              <div class="v2-stat"><div class="v">500</div><div class="l">People served</div></div>
+              <div class="v2-stat"><div class="v">80</div><div class="l">Households</div></div>
+            </div>
+            <ul class="v2-detail-list">
+              <li><span class="lbl">Type</span><span class="val">Hand pump</span></li>
+              <li><span class="lbl">Pump system</span><span class="val">Manual India Mark II</span></li>
+              <li><span class="lbl">Depth</span><span class="val">45 m</span></li>
+              <li><span class="lbl">Completed</span><span class="val">November 2025</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ VARIANT 3 ═══════════════ -->
+    <div class="variant">
+      <div class="variant-label">
+        <span class="num">3</span>
+        <h2>Bottom Floating Card</h2>
+        <span class="tag">Google-Maps-style · non-blocking</span>
+      </div>
+      <div class="stage">
+        <div class="stage-note">Docks at bottom · map stays interactive above</div>
+        <div class="fake-pin" style="top: 30%; left: 50%;"></div>
+        <div class="v3-card">
+          <div class="v3-photo">
+            <div class="photo-hero"></div>
+          </div>
+          <button class="v3-close">×</button>
+          <div class="v3-body">
+            <div class="v3-top">
+              <div>
+                <div class="v3-title">Qala-e-Akhound, Afghanistan</div>
+                <div class="v3-sub">Hand pump · Well #AFG-001</div>
+              </div>
+              <span class="status-badge">Completed</span>
+            </div>
+            <div class="v3-stats">
+              <div class="stat"><div class="v">500</div><div class="l">People</div></div>
+              <div class="stat"><div class="v">80</div><div class="l">Households</div></div>
+              <div class="stat"><div class="v">45m</div><div class="l">Depth</div></div>
+            </div>
+            <div class="v3-chips">
+              <span class="v3-chip">Hand pump</span>
+              <span class="v3-chip">Nov 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════ VARIANT 4 ═══════════════ -->
+    <div class="variant">
+      <div class="variant-label">
+        <span class="num">4</span>
+        <h2>Editorial Modal</h2>
+        <span class="tag">Feature moment · press-kit feel</span>
+      </div>
+      <div class="stage v4-stage">
+        <div class="stage-note" style="color: rgba(255,255,255,.85);">Center modal · dimmed backdrop</div>
+        <div class="v4-modal">
+          <div class="v4-photo">
+            <div class="photo-hero"></div>
+            <span class="status-badge">Completed</span>
+            <button class="v4-close">×</button>
+          </div>
+          <div class="v4-body">
+            <div class="v4-eyebrow"><span class="flag">🇦🇫</span> Qala-e-Akhound, Afghanistan · Well #AFG-001</div>
+            <div class="v4-title">Clean water for 500 people at Qala-e-Akhound School</div>
+            <div class="v4-impact">
+              <div class="stat"><div class="v">500</div><div class="l">People served</div></div>
+              <div class="stat"><div class="v">80</div><div class="l">Households</div></div>
+              <div class="stat"><div class="v">45m</div><div class="l">Well depth</div></div>
+            </div>
+            <div class="v4-details">
+              <div class="row"><span class="lbl">Type</span><span class="val">Hand pump</span></div>
+              <div class="row"><span class="lbl">System</span><span class="val">India Mark II</span></div>
+              <div class="row"><span class="lbl">Location</span><span class="val">K–12 School</span></div>
+              <div class="row"><span class="lbl">Completed</span><span class="val">November 2025</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
