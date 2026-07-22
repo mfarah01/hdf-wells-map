@@ -15,10 +15,8 @@
    "startDate": "2026-01-16",
    "endDate": "2026-03-01",
    "beneficiaries": "Approximatly 500",
-   "households": 80,
    "lat": 28.328606,
-   "lng": 29.060804,
-   "cardStyle": "drawer"
+   "lng": 29.060804
   },
   {
    "id": "HDF BUR 2026 001",
@@ -41,13 +39,10 @@
    "status": "completed",
    "startDate": "2026-02-01",
    "endDate": "2026-03-14",
-   "beneficiaries": "500",
-   "households": 80,
-   "depth": "45 m",
+   "beneficiaries": null,
    "lat": 9.064675,
    "lng": 38.576541,
-   "system": "India Mark II hand pump",
-   "cardStyle": "modal"
+   "system": "Hand Pump"
   },
   {
    "id": "HDF ETH 2026 005",
