@@ -35,7 +35,7 @@ Then `git add -A && git commit && git push` from this repo.
 ## `wells.json` shape (what `index.html` consumes)
 
 - `stats.total`, `stats.completed`, `stats.countries` — header counters
-- `pinned[]` — wells with real coordinates; rendered as clustered points (`wells` source, layers `clusters`, `cluster-count`, `well-pins`). Fields used by the popup: `id`, `country`, `location`, `type`, `depth`, `system`, `status`, `startDate`, `endDate`, `beneficiaries`, `photoLink`, `lat`, `lng`.
+- `pinned[]` — wells with real coordinates; rendered as clustered points (`wells` source, layers `clusters`, `cluster-count`, `well-pins`). Fields used by the popup: `id`, `country`, `location`, `type`, `depth`, `system`, `status`, `startDate`, `endDate`, `beneficiaries`, `lat`, `lng`.
 - `aggregates[]` — country-level bubbles for wells without precise coordinates; rendered as a second source (`aggs`, layers `agg-bubbles`, `agg-count`). Each carries `country`, `count`, `completed`, and `wells[]` (list surfaced in the popup).
 
 Two independent Mapbox sources — pinned wells cluster; aggregate bubbles never do. Bounds are auto-fit from both.

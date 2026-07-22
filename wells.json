@@ -16,7 +16,6 @@
    "endDate": "2026-03-01",
    "beneficiaries": "Approximatly 500",
    "households": 80,
-   "photoLink": null,
    "lat": 28.328606,
    "lng": 29.060804,
    "cardStyle": "drawer"
@@ -30,7 +29,6 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": null,
    "lat": -2.45947,
    "lng": 30.404817,
    "system": "Hand Pump"
@@ -46,7 +44,6 @@
    "beneficiaries": "500",
    "households": 80,
    "depth": "45 m",
-   "photoLink": null,
    "lat": 9.064675,
    "lng": 38.576541,
    "system": "India Mark II hand pump",
@@ -61,7 +58,6 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": null,
    "lat": 8.550378,
    "lng": 43.44928,
    "system": "Hand Pump"
@@ -75,7 +71,6 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "150",
-   "photoLink": null,
    "lat": 1.677998,
    "lng": 44.719386,
    "system": "Hand Pump"
@@ -89,7 +84,6 @@
    "startDate": "2024-05-01",
    "endDate": "2024-06-01",
    "beneficiaries": "180 Households",
-   "photoLink": null,
    "lat": 1.725556,
    "lng": 40.036667,
    "depth": "49 ft",
@@ -104,7 +98,6 @@
    "startDate": "2025-01-01",
    "endDate": "2025-02-01",
    "beneficiaries": "160 Households",
-   "photoLink": null,
    "lat": 1.729167,
    "lng": 40.038889,
    "depth": "46 ft",
@@ -119,7 +112,6 @@
    "startDate": "2025-02-01",
    "endDate": "2025-03-01",
    "beneficiaries": "170 Households",
-   "photoLink": null,
    "lat": 1.728611,
    "lng": 40.045,
    "depth": "52 ft",
@@ -134,7 +126,6 @@
    "startDate": "2025-02-01",
    "endDate": "2025-03-01",
    "beneficiaries": "190 Households",
-   "photoLink": null,
    "lat": 1.771944,
    "lng": 40.082222,
    "depth": "60 ft",
@@ -149,7 +140,6 @@
    "startDate": "2025-12-17",
    "endDate": "2026-02-02",
    "beneficiaries": "300 Students & 70 Households",
-   "photoLink": null,
    "lat": 1.69947,
    "lng": 40.001383,
    "depth": "27 ft",
@@ -164,7 +154,6 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "150 household",
-   "photoLink": null,
    "lat": 0.527549,
    "lng": 38.51209,
    "system": "Solar submersible"
@@ -178,7 +167,6 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "100 Household",
-   "photoLink": null,
    "lat": -2.37904,
    "lng": 40.43856,
    "system": "Solar submersible"
@@ -192,7 +180,6 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "80 Household",
-   "photoLink": null,
    "lat": 0.320134,
    "lng": 38.197101,
    "system": "Solar submersible"
@@ -206,7 +193,6 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": null,
    "lat": 1.5885,
    "lng": 37.802472,
    "system": "Solar submersible"
@@ -220,7 +206,6 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": null,
    "lat": 2.048463,
    "lng": 37.423817,
    "system": "Solar submersible"
@@ -234,7 +219,6 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "64",
-   "photoLink": null,
    "lat": 0.036861,
    "lng": 34.827889,
    "system": "Hand Pump"
@@ -248,7 +232,6 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "250",
-   "photoLink": null,
    "lat": -4.126194,
    "lng": 39.623083,
    "system": "Solar submersible"
@@ -262,7 +245,6 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "57",
-   "photoLink": null,
    "lat": 3.558962,
    "lng": 39.049675,
    "system": "Hand Pump"
@@ -276,7 +258,6 @@
    "startDate": "2025-07-05",
    "endDate": "2025-05-01",
    "beneficiaries": "150 Households",
-   "photoLink": null,
    "lat": 9.738815,
    "lng": 44.465536,
    "depth": "43 ft",
@@ -291,7 +272,6 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": null,
    "lat": 15.295457,
    "lng": 36.476311,
    "system": "Hand Pump"
