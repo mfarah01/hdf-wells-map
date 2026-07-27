@@ -1,0 +1,7 @@
+# Unredacted source photos — must never be committed.
+# The redacted versions live in photos/ and are what the site serves.
+AfghanistanWell.jpg
+AfghanistanWell-People.jpg
+
+# Ephemeral debug artifacts (scripts/grid_debug.py output)
+_grid*.jpg

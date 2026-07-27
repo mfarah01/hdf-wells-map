@@ -9,15 +9,26 @@
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css">
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js" defer></script>
   <script src="./token.js"></script>
-  <!-- Mixpanel (anonymous visitor analytics — no logins on this page, so no identify calls) -->
+  <!-- Mixpanel (anonymous visitor analytics — no logins on this page, so no identify calls).
+       Records ONLY on production hdfund.org domains, so demos on onrender.com/localhost
+       never pollute the data. For verification, append ?mp_test=1 to the URL. -->
   <script type="text/javascript">
-    (function (f, b) { if (!b.__SV) { var e, g, i, h; window.mixpanel = b; b._i = []; b.init = function (e, f, c) { function g(a, d) { var b = d.split("."); 2 == b.length && ((a = a[b[0]]), (d = b[1])); a[d] = function () { a.push([d].concat(Array.prototype.slice.call(arguments, 0))); }; } var a = b; "undefined" !== typeof c ? (a = b[c] = []) : (c = "mixpanel"); a.people = a.people || []; a.toString = function (a) { var d = "mixpanel"; "mixpanel" !== c && (d += "." + c); a || (d += " (stub)"); return d; }; a.people.toString = function () { return a.toString(1) + ".people (stub)"; }; i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" "); for (h = 0; h < i.length; h++) g(a, i[h]); var j = "set set_once union unset remove delete".split(" "); a.get_group = function () { function b(c) { d[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); a.push([e, call2]); }; } for ( var d = {}, e = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++) b(j[c]); return d; }; b._i.push([e, f, c]); }; b.__SV = 1.2; e = f.createElement("script"); e.type = "text/javascript"; e.async = !0; e.src = "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"; g = f.getElementsByTagName("script")[0]; g.parentNode.insertBefore(e, g); } })(document, window.mixpanel || []);
+    (function () {
+      var isProd = /(^|\.)hdfund\.org$/.test(location.hostname);
+      var isTest = location.search.indexOf('mp_test=1') !== -1;
+      if (!isProd && !isTest) {
+        // No-op shim: tracking calls elsewhere in the page do nothing off-production.
+        window.mixpanel = { track: function () {}, register: function () {}, identify: function () {}, people: { set: function () {} } };
+        return;
+      }
+      (function (f, b) { if (!b.__SV) { var e, g, i, h; window.mixpanel = b; b._i = []; b.init = function (e, f, c) { function g(a, d) { var b = d.split("."); 2 == b.length && ((a = a[b[0]]), (d = b[1])); a[d] = function () { a.push([d].concat(Array.prototype.slice.call(arguments, 0))); }; } var a = b; "undefined" !== typeof c ? (a = b[c] = []) : (c = "mixpanel"); a.people = a.people || []; a.toString = function (a) { var d = "mixpanel"; "mixpanel" !== c && (d += "." + c); a || (d += " (stub)"); return d; }; a.people.toString = function () { return a.toString(1) + ".people (stub)"; }; i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" "); for (h = 0; h < i.length; h++) g(a, i[h]); var j = "set set_once union unset remove delete".split(" "); a.get_group = function () { function b(c) { d[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); a.push([e, call2]); }; } for ( var d = {}, e = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++) b(j[c]); return d; }; b._i.push([e, f, c]); }; b.__SV = 1.2; e = f.createElement("script"); e.type = "text/javascript"; e.async = !0; e.src = "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"; g = f.getElementsByTagName("script")[0]; g.parentNode.insertBefore(e, g); } })(document, window.mixpanel || []);
 
-    mixpanel.init('c4024051a1855e49a71bf7ffa83b0764', {
-      debug: false,
-      track_pageview: true,
-      persistence: 'localStorage'
-    });
+      mixpanel.init('c4024051a1855e49a71bf7ffa83b0764', {
+        debug: isTest,
+        track_pageview: true,
+        persistence: 'localStorage'
+      });
+    })();
   </script>
   <style>
     :root {
@@ -108,13 +119,112 @@
     .wm-pop-badge.completed { background: #C8E6C9; color: #1b5e20; }
     .wm-pop-badge.in_progress { background: #FFF3E0; color: #8a5300; }
     .wm-pop-badge.planned { background: #E3F2FD; color: #0d477f; }
-    .wm-pop-photos { display: inline-block; margin-top: .35rem; font-weight: 600; color: var(--hdf-primary); }
+    .wm-pop-img {
+      display: block; width: 100%; height: 170px; object-fit: cover;
+      border-radius: 8px; margin-bottom: .55rem; background: #eef1f4;
+    }
+    .wm-pop-btn {
+      display: block; text-align: center; margin-top: .55rem;
+      background: var(--hdf-primary); color: #fff; text-decoration: none;
+      padding: .5rem .75rem; border-radius: 8px; font-weight: 600; font-size: .8rem;
+      transition: background .15s ease;
+    }
+    .wm-pop-btn:hover { background: var(--hdf-primary-dark); }
     .wm-pop-list { margin: .3rem 0 0; padding-left: 1rem; max-height: 150px; overflow-y: auto; }
     .wm-pop-list li { margin-bottom: .2rem; }
 
     @media (max-width: 640px) {
       .pm-stats { gap: .9rem; }
       .pm-stat .v { font-size: .98rem; }
+    }
+
+    /* ── Right-side Drawer (cardStyle: "drawer") ── */
+    .wm-drawer {
+      position: absolute; top: 0; right: 0; bottom: 0; width: 380px;
+      background: #fff; box-shadow: -8px 0 24px rgba(0,0,0,.18);
+      display: flex; flex-direction: column; overflow: hidden;
+      z-index: 10; transform: translateX(100%); transition: transform .28s ease;
+    }
+    .wm-drawer.open { transform: translateX(0); }
+    .wm-drawer-photo { position: relative; flex-shrink: 0; aspect-ratio: 4/3; background: #eef1f4; }
+    .wm-drawer-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .wm-drawer-close, .wm-modal-close {
+      position: absolute; top: 12px; left: 12px;
+      width: 34px; height: 34px; border-radius: 50%; border: none; cursor: pointer;
+      background: rgba(255,255,255,.95); color: var(--hdf-text);
+      font-size: 1.2rem; line-height: 1;
+      display: inline-flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    }
+    .wm-drawer-body { padding: 1.1rem 1.25rem; overflow-y: auto; flex: 1;
+      font-family: 'Outfit', system-ui, sans-serif; color: var(--hdf-text); }
+    .wm-eyebrow {
+      font-size: .65rem; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--hdf-primary); font-weight: 700; margin-bottom: .3rem;
+    }
+    .wm-drawer-title { font-size: 1.25rem; font-weight: 700; color: var(--hdf-primary-dark); line-height: 1.2; margin-bottom: .6rem; }
+    .wm-stat-row { display: flex; gap: 1.5rem; padding: .8rem 0;
+      border-top: 1px solid #e5e9ee; border-bottom: 1px solid #e5e9ee; margin: .8rem 0; }
+    .wm-stat .v { font-size: 1.4rem; font-weight: 800; color: var(--hdf-primary); line-height: 1;
+      font-variant-numeric: tabular-nums; }
+    .wm-stat .l { font-size: .68rem; text-transform: uppercase; letter-spacing: .05em;
+      color: var(--hdf-text-light); margin-top: .25rem; }
+    .wm-detail-list { list-style: none; padding: 0; margin: 0;
+      display: flex; flex-direction: column; gap: .5rem; }
+    .wm-detail-list li { display: flex; justify-content: space-between; font-size: .85rem; padding: .2rem 0; }
+    .wm-detail-list .lbl { color: var(--hdf-text-light); }
+    .wm-detail-list .val { font-weight: 600; }
+
+    /* ── Editorial Modal (cardStyle: "modal") ── */
+    .wm-modal-backdrop {
+      position: absolute; inset: 0; background: rgba(13, 62, 88, .55);
+      display: none; align-items: center; justify-content: center;
+      z-index: 20; padding: 1rem;
+    }
+    .wm-modal-backdrop.open { display: flex; }
+    .wm-modal {
+      width: 100%; max-width: 560px;
+      background: #fff; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      font-family: 'Outfit', system-ui, sans-serif;
+      max-height: calc(100% - 2rem); display: flex; flex-direction: column;
+    }
+    .wm-modal-photo { position: relative; flex-shrink: 0; }
+    .wm-modal-photo img { width: 100%; aspect-ratio: 21/9; object-fit: cover; display: block; }
+    .wm-modal-close { top: 12px; left: 12px; background: rgba(0,0,0,.55); color: #fff; }
+    .wm-modal-body { padding: 1.3rem 1.6rem 1.6rem; overflow-y: auto; }
+    .wm-modal-eyebrow {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .7rem; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--hdf-text-light); font-weight: 600; margin-bottom: .35rem;
+    }
+    .wm-modal-title { font-size: 1.45rem; font-weight: 700; color: var(--hdf-primary-dark);
+      line-height: 1.2; margin-bottom: 1rem; }
+    .wm-impact {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem;
+      padding: 1rem; background: linear-gradient(135deg, #f5f8fa 0%, #eaf1f5 100%);
+      border-radius: 12px; margin-bottom: 1rem;
+    }
+    .wm-impact .stat { text-align: center; }
+    .wm-impact .stat .v {
+      font-size: 1.5rem; font-weight: 800; color: var(--hdf-primary);
+      font-variant-numeric: tabular-nums; line-height: 1;
+    }
+    .wm-impact .stat .l {
+      font-size: .62rem; text-transform: uppercase; letter-spacing: .06em;
+      color: var(--hdf-text-light); margin-top: .3rem; line-height: 1.2;
+    }
+    .wm-modal-details {
+      display: grid; grid-template-columns: 1fr 1fr; gap: .5rem 1.5rem; font-size: .85rem;
+    }
+    .wm-modal-details .row { display: flex; justify-content: space-between;
+      padding: .28rem 0; border-bottom: 1px dashed #e5e9ee; }
+    .wm-modal-details .lbl { color: var(--hdf-text-light); }
+    .wm-modal-details .val { font-weight: 600; }
+
+    @media (max-width: 640px) {
+      .wm-drawer { width: 100%; }
+      .wm-modal-details { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -130,8 +240,7 @@
     </div>
 
     <div class="pm-stats" id="statsRow" style="display:none;">
-      <div class="pm-stat"><div class="v" id="stTotal">–</div><div class="l">Wells</div></div>
-      <div class="pm-stat"><div class="v" id="stCompleted">–</div><div class="l">Completed</div></div>
+      <div class="pm-stat"><div class="v" id="stTotal">–</div><div class="l">Wells Built</div></div>
       <div class="pm-stat"><div class="v" id="stCountries">–</div><div class="l">Countries</div></div>
     </div>
   </div>
@@ -141,6 +250,8 @@
     <div class="pm-legend" id="mapLegend">
       <span class="legend-item"><span class="legend-swatch agg"></span> Country total (precise location coming soon)</span>
     </div>
+    <aside class="wm-drawer" id="wmDrawer" aria-hidden="true"></aside>
+    <div class="wm-modal-backdrop" id="wmModal" aria-hidden="true"></div>
   </div>
 
   <script>
@@ -161,7 +272,6 @@
 
       const stats = data.stats || {};
       document.getElementById('stTotal').textContent = stats.total ?? '–';
-      document.getElementById('stCompleted').textContent = stats.completed ?? '–';
       document.getElementById('stCountries').textContent = stats.countries ?? '–';
       document.getElementById('statsRow').style.display = '';
 
@@ -174,16 +284,6 @@
         countries: stats.countries
       });
 
-      // Deepest-engagement event: visitor opens a partner photo album from a popup
-      document.addEventListener('click', (ev) => {
-        const link = ev.target.closest && ev.target.closest('.wm-pop-photos');
-        if (!link) return;
-        const props = { country: link.dataset.country, well_type: link.dataset.wellType };
-        if (!props.country) delete props.country;
-        if (!props.well_type) delete props.well_type;
-        mixpanel.track('photos_link_clicked', props);
-      });
-
       const legend = document.getElementById('mapLegend');
       const li = document.createElement('span');
       li.className = 'legend-item';
@@ -193,7 +293,7 @@
       mapboxgl.accessToken = window.MAPBOX_TOKEN || '';
       const map = new mapboxgl.Map({
         container: 'publicMap',
-        style: 'mapbox://styles/mapbox/light-v11',
+        style: 'mapbox://styles/mapbox/satellite-streets-v12',
         center: [45, 12],
         zoom: 2.6,
         attributionControl: true,
@@ -208,9 +308,12 @@
           type: 'Feature',
           geometry: { type: 'Point', coordinates: [w.lng, w.lat] },
           properties: {
+            id: w.id,
             country: w.country, location: w.location || '', type: w.type || '',
+            depth: w.depth || '', system: w.system || '',
             status: w.status, startDate: w.startDate || '', endDate: w.endDate || '',
-            beneficiaries: w.beneficiaries || '', photoLink: w.photoLink || '',
+            beneficiaries: w.beneficiaries || '', households: w.households || '',
+            cardStyle: w.cardStyle || '',
           },
         })),
       };
@@ -278,23 +381,101 @@
           });
         });
 
-        map.on('click', 'well-pins', (e) => {
-          const p = e.features[0].properties;
-          const pinProps = { country: p.country, status: p.status, has_photos: !!p.photoLink };
-          if (p.type) pinProps.well_type = p.type;
-          mixpanel.track('well_pin_opened', pinProps);
-          const dates = [p.startDate, p.endDate].filter(Boolean).join(' → ');
+        const drawerEl = document.getElementById('wmDrawer');
+        const modalEl = document.getElementById('wmModal');
+        const closeDrawer = () => drawerEl.classList.remove('open');
+        const closeModal = () => modalEl.classList.remove('open');
+        document.addEventListener('keydown', (ev) => {
+          if (ev.key === 'Escape') { closeDrawer(); closeModal(); }
+        });
+        modalEl.addEventListener('click', (ev) => { if (ev.target === modalEl) closeModal(); });
+
+        function wellTitle(p) {
+          if (!p.location || p.location === p.country || p.location.endsWith(p.country)) {
+            return p.location || p.country;
+          }
+          return p.location + ', ' + p.country;
+        }
+        function wellDates(p) { return [p.startDate, p.endDate].filter(Boolean).join(' → '); }
+        function wellPhoto(p) { return 'photos/' + encodeURIComponent(p.id) + '.jpg'; }
+
+        function openPopupCard(p, lngLat) {
+          const dates = wellDates(p);
           const html =
-            '<div class="wm-pop-head">' + esc(p.type || 'Well') + '</div>' +
+            '<div class="wm-pop-head">' + esc(wellTitle(p)) + '</div>' +
             '<div class="wm-pop-body">' +
               '<div class="wm-pop-row"><span class="wm-pop-badge ' + esc(p.status) + '">' + esc(String(p.status).replace('_', ' ')) + '</span></div>' +
-              (p.location ? '<div class="wm-pop-row"><span class="lbl">Location:</span> ' + esc(p.location) + ', ' + esc(p.country) + '</div>'
-                          : '<div class="wm-pop-row"><span class="lbl">Country:</span> ' + esc(p.country) + '</div>') +
+              '<div class="wm-pop-row"><span class="lbl">Type:</span> ' + esc(p.type || '—') + '</div>' +
+              (p.system ? '<div class="wm-pop-row"><span class="lbl">Pump:</span> ' + esc(p.system) + '</div>' : '') +
+              (p.depth ? '<div class="wm-pop-row"><span class="lbl">Depth:</span> ' + esc(p.depth) + '</div>' : '') +
               (p.beneficiaries ? '<div class="wm-pop-row"><span class="lbl">Serves:</span> ' + esc(p.beneficiaries) + '</div>' : '') +
               (dates ? '<div class="wm-pop-row"><span class="lbl">Built:</span> ' + esc(dates) + '</div>' : '') +
-              (p.photoLink ? '<a class="wm-pop-photos" data-country="' + esc(p.country) + '" data-well-type="' + esc(p.type || '') + '" href="' + esc(p.photoLink) + '" target="_blank" rel="noopener noreferrer">View photos ↗</a>' : '') +
             '</div>';
-          new mapboxgl.Popup({ offset: 12 }).setLngLat(e.lngLat).setHTML(html).addTo(map);
+          new mapboxgl.Popup({ offset: 12 }).setLngLat(lngLat).setHTML(html).addTo(map);
+        }
+
+        function openDrawerCard(p) {
+          closeModal();
+          const dates = wellDates(p);
+          drawerEl.innerHTML =
+            '<div class="wm-drawer-photo">' +
+              '<button class="wm-drawer-close" aria-label="Close">×</button>' +
+            '</div>' +
+            '<div class="wm-drawer-body">' +
+              '<div class="wm-eyebrow">' + esc(p.country) + ' · Well #' + esc(p.id) + '</div>' +
+              '<div class="wm-drawer-title">' + esc(wellTitle(p)) + '</div>' +
+              '<div><span class="wm-pop-badge ' + esc(p.status) + '">' + esc(String(p.status).replace('_', ' ')) + '</span></div>' +
+              '<div class="wm-stat-row">' +
+                (p.beneficiaries ? '<div class="wm-stat"><div class="v">' + esc(p.beneficiaries) + '</div><div class="l">People served</div></div>' : '') +
+                (p.households ? '<div class="wm-stat"><div class="v">' + esc(p.households) + '</div><div class="l">Households</div></div>' : '') +
+              '</div>' +
+              '<ul class="wm-detail-list">' +
+                '<li><span class="lbl">Type</span><span class="val">' + esc(p.type || '—') + '</span></li>' +
+                (p.system ? '<li><span class="lbl">Pump system</span><span class="val">' + esc(p.system) + '</span></li>' : '') +
+                (p.depth ? '<li><span class="lbl">Depth</span><span class="val">' + esc(p.depth) + '</span></li>' : '') +
+                (dates ? '<li><span class="lbl">Built</span><span class="val">' + esc(dates) + '</span></li>' : '') +
+              '</ul>' +
+            '</div>';
+          drawerEl.querySelector('.wm-drawer-close').addEventListener('click', closeDrawer);
+          drawerEl.classList.add('open');
+        }
+
+        function openModalCard(p) {
+          closeDrawer();
+          const dates = wellDates(p);
+          modalEl.innerHTML =
+            '<div class="wm-modal">' +
+              '<div class="wm-modal-photo">' +
+                '<button class="wm-modal-close" aria-label="Close">×</button>' +
+              '</div>' +
+              '<div class="wm-modal-body">' +
+                '<div class="wm-modal-eyebrow">' + esc(p.country) + ' · Well #' + esc(p.id) + '</div>' +
+                '<div class="wm-modal-title">' + esc(wellTitle(p)) + '</div>' +
+                '<div class="wm-impact">' +
+                  (p.beneficiaries ? '<div class="stat"><div class="v">' + esc(p.beneficiaries) + '</div><div class="l">People served</div></div>' : '') +
+                  (p.households ? '<div class="stat"><div class="v">' + esc(p.households) + '</div><div class="l">Households</div></div>' : '') +
+                  (p.depth ? '<div class="stat"><div class="v">' + esc(p.depth) + '</div><div class="l">Well depth</div></div>' : '') +
+                '</div>' +
+                '<div class="wm-modal-details">' +
+                  '<div class="row"><span class="lbl">Type</span><span class="val">' + esc(p.type || '—') + '</span></div>' +
+                  (p.system ? '<div class="row"><span class="lbl">System</span><span class="val">' + esc(p.system) + '</span></div>' : '') +
+                  (dates ? '<div class="row"><span class="lbl">Built</span><span class="val">' + esc(dates) + '</span></div>' : '') +
+                  '<div class="row"><span class="lbl">Status</span><span class="val">' + esc(String(p.status).replace('_', ' ')) + '</span></div>' +
+                '</div>' +
+              '</div>' +
+            '</div>';
+          modalEl.querySelector('.wm-modal-close').addEventListener('click', closeModal);
+          modalEl.classList.add('open');
+        }
+
+        map.on('click', 'well-pins', (e) => {
+          const p = e.features[0].properties;
+          const pinProps = { country: p.country, status: p.status, card_style: p.cardStyle || 'popup' };
+          if (p.type) pinProps.well_type = p.type;
+          mixpanel.track('well_pin_opened', pinProps);
+          if (p.cardStyle === 'drawer') return openDrawerCard(p);
+          if (p.cardStyle === 'modal') return openModalCard(p);
+          openPopupCard(p, e.lngLat);
         });
 
         map.on('click', 'agg-bubbles', (e) => {
@@ -306,13 +487,14 @@
           });
           let wells = [];
           try { wells = JSON.parse(p.wellsJson); } catch (_) {}
-          const items = wells.map(w =>
-            '<li>' + esc(w.type || 'Well') + (w.location ? ' <span style="color:#888;">· ' + esc(w.location) + '</span>' : '') + '</li>'
-          ).join('');
+          const items = wells.map(w => {
+            const detail = [w.system || w.type, w.depth].filter(Boolean).join(', ');
+            return '<li>' + esc(w.location || w.type || 'Well') +
+              (detail ? ' <span style="color:#888;">· ' + esc(detail) + '</span>' : '') + '</li>';
+          }).join('');
           const html =
             '<div class="wm-pop-head">' + esc(p.country) + ' · ' + esc(p.count) + ' wells</div>' +
             '<div class="wm-pop-body">' +
-              '<div class="wm-pop-row"><span class="lbl">Completed:</span> ' + esc(p.completed) + ' of ' + esc(p.count) + '</div>' +
               (items ? '<ul class="wm-pop-list">' + items + '</ul>' : '') +
             '</div>';
           new mapboxgl.Popup({ offset: 12, maxWidth: '320px' }).setLngLat(e.lngLat).setHTML(html).addTo(map);

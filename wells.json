@@ -1,7 +1,7 @@
 {
  "generatedAt": "2026-07-15T13:34:41.013Z",
  "stats": {
-  "total": 94,
+  "total": 45,
   "completed": 45,
   "countries": 11
  },
@@ -15,35 +15,8 @@
    "startDate": "2026-01-16",
    "endDate": "2026-03-01",
    "beneficiaries": "Approximatly 500",
-   "photoLink": "https://drive.google.com/drive/folders/1jWxSNu7ljSmBxD41jveMeP21U5Bi8ea8?usp=drive_link",
    "lat": 28.328606,
    "lng": 29.060804
-  },
-  {
-   "id": "RPT-011",
-   "country": "Pakistan",
-   "location": "Village Naholi, Chattarplain, District Mansehra",
-   "type": "Pakistan Water Well - Traditional Dug Well (100-130ft)",
-   "status": "in_progress",
-   "startDate": "2026-03-01",
-   "endDate": null,
-   "beneficiaries": "40 Families",
-   "photoLink": null,
-   "lat": 34.615013,
-   "lng": 73.13667
-  },
-  {
-   "id": "RPT-015",
-   "country": "Pakistan",
-   "location": "Village Lachimang, Chattarplain, District Mansehra",
-   "type": "Pakistan Water Well - Traditional Dug Well (100-130ft)",
-   "status": "in_progress",
-   "startDate": "2026-03-01",
-   "endDate": null,
-   "beneficiaries": "40 Families",
-   "photoLink": null,
-   "lat": 34.606669,
-   "lng": 73.123513
   },
   {
    "id": "HDF BUR 2026 001",
@@ -54,9 +27,9 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "Alya Masour/Rusara, Burundi",
    "lat": -2.45947,
-   "lng": 30.404817
+   "lng": 30.404817,
+   "system": "Hand Pump"
   },
   {
    "id": "HDF ETH 2025 001",
@@ -67,9 +40,9 @@
    "startDate": "2026-02-01",
    "endDate": "2026-03-14",
    "beneficiaries": null,
-   "photoLink": "Ajmal Nizamuddin: Menagesha Ethiopia",
    "lat": 9.064675,
-   "lng": 38.576541
+   "lng": 38.576541,
+   "system": "Hand Pump"
   },
   {
    "id": "HDF ETH 2026 005",
@@ -80,9 +53,9 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "Samina Mansoor",
    "lat": 8.550378,
-   "lng": 43.44928
+   "lng": 43.44928,
+   "system": "Hand Pump"
   },
   {
    "id": "HDF SO 2026 001",
@@ -93,22 +66,9 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "150",
-   "photoLink": "Husna Perecha",
    "lat": 1.677998,
-   "lng": 44.719386
-  },
-  {
-   "id": "HDF SO 2026 002",
-   "country": "Somalia",
-   "location": "Hiiran bile - Hiran - Somalia",
-   "type": "Shallow well",
-   "status": "in_progress",
-   "startDate": "2026-03-05",
-   "endDate": "2026-06-05",
-   "beneficiaries": null,
-   "photoLink": "A Chawdry",
-   "lat": 4.8388,
-   "lng": 45.2148
+   "lng": 44.719386,
+   "system": "Hand Pump"
   },
   {
    "id": "HDF KE 2024 001",
@@ -119,9 +79,10 @@
    "startDate": "2024-05-01",
    "endDate": "2024-06-01",
    "beneficiaries": "180 Households",
-   "photoLink": "Ahmad Amin",
    "lat": 1.725556,
-   "lng": 40.036667
+   "lng": 40.036667,
+   "depth": "49 ft",
+   "system": "India Mark II"
   },
   {
    "id": "HDF KE 2025 002",
@@ -132,9 +93,10 @@
    "startDate": "2025-01-01",
    "endDate": "2025-02-01",
    "beneficiaries": "160 Households",
-   "photoLink": "Zaheer family",
    "lat": 1.729167,
-   "lng": 40.038889
+   "lng": 40.038889,
+   "depth": "46 ft",
+   "system": "India Mark II"
   },
   {
    "id": "HDF KE 2025 003",
@@ -145,9 +107,10 @@
    "startDate": "2025-02-01",
    "endDate": "2025-03-01",
    "beneficiaries": "170 Households",
-   "photoLink": "Maaz Family",
    "lat": 1.728611,
-   "lng": 40.045
+   "lng": 40.045,
+   "depth": "52 ft",
+   "system": "India Mark II"
   },
   {
    "id": "HDF KE 2025 004",
@@ -158,9 +121,10 @@
    "startDate": "2025-02-01",
    "endDate": "2025-03-01",
    "beneficiaries": "190 Households",
-   "photoLink": "sayed waqas family",
    "lat": 1.771944,
-   "lng": 40.082222
+   "lng": 40.082222,
+   "depth": "60 ft",
+   "system": "India Mark II"
   },
   {
    "id": "HDF KE 2025 008",
@@ -171,9 +135,10 @@
    "startDate": "2025-12-17",
    "endDate": "2026-02-02",
    "beneficiaries": "300 Students & 70 Households",
-   "photoLink": "Hanif Zuhair: Wajir",
    "lat": 1.69947,
-   "lng": 40.001383
+   "lng": 40.001383,
+   "depth": "27 ft",
+   "system": "India Mark II"
   },
   {
    "id": "HDF KE 2026 024",
@@ -184,9 +149,9 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "150 household",
-   "photoLink": "Bassem Elkhatib",
    "lat": 0.527549,
-   "lng": 38.51209
+   "lng": 38.51209,
+   "system": "Solar submersible"
   },
   {
    "id": "HDF KE 2026 025",
@@ -197,9 +162,9 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "100 Household",
-   "photoLink": "HDF Sadaqah Jariyah 1",
    "lat": -2.37904,
-   "lng": 40.43856
+   "lng": 40.43856,
+   "system": "Solar submersible"
   },
   {
    "id": "HDF KE 2026 026",
@@ -210,9 +175,9 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "80 Household",
-   "photoLink": "HDF Sadaqah Jariyah 2/Kinna, Isiolo",
    "lat": 0.320134,
-   "lng": 38.197101
+   "lng": 38.197101,
+   "system": "Solar submersible"
   },
   {
    "id": "HDF KE 2026 029",
@@ -223,9 +188,9 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "Ihab 1",
    "lat": 1.5885,
-   "lng": 37.802472
+   "lng": 37.802472,
+   "system": "Solar submersible"
   },
   {
    "id": "HDF KE 2026 030",
@@ -236,9 +201,9 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "Ihab 2",
    "lat": 2.048463,
-   "lng": 37.423817
+   "lng": 37.423817,
+   "system": "Solar submersible"
   },
   {
    "id": "HDF KE 2026 031",
@@ -249,9 +214,9 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "64",
-   "photoLink": "Kyrie Irving 1",
    "lat": 0.036861,
-   "lng": 34.827889
+   "lng": 34.827889,
+   "system": "Hand Pump"
   },
   {
    "id": "HDF KE 2026 032",
@@ -262,9 +227,9 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "250",
-   "photoLink": "Kyrie Irving 2",
    "lat": -4.126194,
-   "lng": 39.623083
+   "lng": 39.623083,
+   "system": "Solar submersible"
   },
   {
    "id": "HDF KE 2026 033",
@@ -275,22 +240,9 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": "57",
-   "photoLink": "Mahir Patel",
    "lat": 3.558962,
-   "lng": 39.049675
-  },
-  {
-   "id": "HDF KE 2026 034",
-   "country": "Kenya",
-   "location": "Kenya, Mandera, Bella",
-   "type": "Borehole",
-   "status": "in_progress",
-   "startDate": "2026-03-05",
-   "endDate": "2026-06-05",
-   "beneficiaries": "500",
-   "photoLink": "Younas Family",
-   "lat": 3.947417,
-   "lng": 41.652889
+   "lng": 39.049675,
+   "system": "Hand Pump"
   },
   {
    "id": "HDF SL 2025 001",
@@ -301,9 +253,10 @@
    "startDate": "2025-07-05",
    "endDate": "2025-05-01",
    "beneficiaries": "150 Households",
-   "photoLink": "Abdirahman Maxamud Dualeh 1",
    "lat": 9.738815,
-   "lng": 44.465536
+   "lng": 44.465536,
+   "depth": "43 ft",
+   "system": "Hand pulley"
   },
   {
    "id": "HDF SUD 2026 001",
@@ -314,127 +267,34 @@
    "startDate": "2026-03-05",
    "endDate": "2026-06-05",
    "beneficiaries": null,
-   "photoLink": "Najmaunisa Khanum",
    "lat": 15.295457,
-   "lng": 36.476311
-  },
-  {
-   "id": "HDF SUD 2026 003",
-   "country": "Sudan",
-   "location": "Al Dabbah",
-   "type": "Borehole",
-   "status": "planned",
-   "startDate": "2026-03-05",
-   "endDate": "2026-06-05",
-   "beneficiaries": null,
-   "photoLink": "Al Dabbah/Sudan",
-   "lat": 18.054394,
-   "lng": 30.938408
-  },
-  {
-   "id": "HDF SUD 2026 004",
-   "country": "Sudan",
-   "location": "Dongola",
-   "type": "Borehole",
-   "status": "planned",
-   "startDate": "2026-03-05",
-   "endDate": "2026-06-05",
-   "beneficiaries": null,
-   "photoLink": "Dongola/Sudan",
-   "lat": 19.175886,
-   "lng": 30.457448
-  },
-  {
-   "id": "HDF KE 2026 035",
-   "country": "Kenya",
-   "location": "Witu, Lamu",
-   "type": "Hand pumped",
-   "status": "in_progress",
-   "startDate": null,
-   "endDate": null,
-   "beneficiaries": null,
-   "photoLink": "Naveed Murtuza Khan - Witu",
-   "lat": -2.340895,
-   "lng": 40.388067
-  },
-  {
-   "id": "HDF KE 2026 036",
-   "country": "Kenya",
-   "location": "Witu, Lamu",
-   "type": "Hand pumped",
-   "status": "in_progress",
-   "startDate": null,
-   "endDate": null,
-   "beneficiaries": null,
-   "photoLink": "Hodda Muraywid - Witu",
-   "lat": -2.340914,
-   "lng": 40.388038
-  },
-  {
-   "id": "HDF SUD 2026 007",
-   "country": "Sudan",
-   "location": "Al-Thora West, Al Dabbah city",
-   "type": "Hand pumped",
-   "status": "in_progress",
-   "startDate": null,
-   "endDate": null,
-   "beneficiaries": null,
-   "photoLink": null,
-   "lat": 19.645637,
-   "lng": 37.213422
-  },
-  {
-   "id": "HDF SUD 2026 008",
-   "country": "Sudan",
-   "location": "Dhat an-Nitaqayn, Port Sudan",
-   "type": "Hand pumped",
-   "status": "in_progress",
-   "startDate": null,
-   "endDate": null,
-   "beneficiaries": null,
-   "photoLink": null,
-   "lat": 19.639565,
-   "lng": 37.211828
-  },
-  {
-   "id": "HDF SUD 2026 009",
-   "country": "Sudan",
-   "location": "Al-Saada Primary school, Dar Alsalam, Port Sudan",
-   "type": "Hand pumped",
-   "status": "in_progress",
-   "startDate": null,
-   "endDate": null,
-   "beneficiaries": null,
-   "photoLink": null,
-   "lat": 19.596784,
-   "lng": 37.187078
+   "lng": 36.476311,
+   "system": "Hand Pump"
   }
  ],
  "aggregates": [
   {
    "country": "Afghanistan",
-   "count": 4,
+   "count": 3,
    "completed": 3,
    "wells": [
     {
      "type": "Intermediate (35 meters)",
      "location": "QALA-E-AKHOUND K-12 SCHOOL.",
-     "status": "completed"
-    },
-    {
-     "type": "Intermediate (35 meters)",
-     "location": "KAMA DISTRICT, BYLA",
-     "status": "in_progress"
+     "status": "completed",
+     "depth": "35 m"
     },
     {
      "type": "Intermediate (35 meters)",
      "location": "KAMA DISTRICT, BYLAYARI",
-     "status": "completed"
+     "status": "completed",
+     "depth": "35 m"
     },
     {
      "type": "Large (150 meters)",
      "location": "KAMA DISTRICT, Totkay Village",
-     "status": "completed"
+     "status": "completed",
+     "depth": "150 m"
     }
    ],
    "lat": 34.5,
@@ -442,158 +302,13 @@
   },
   {
    "country": "Pakistan",
-   "count": 33,
+   "count": 1,
    "completed": 1,
    "wells": [
     {
      "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
-     "location": "Basti Khobri Pahar Pur Nashaib Teh & Dist Layyah",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Solar Water Pump 100-130ft",
-     "location": "Govt Primery School Dhoon Wala Ehsanpur District Kot Addu",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
-     "location": "Basti Khobri Pahar Pur Nashaib Teh & Dist Layyah",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
-     "location": "Basti Khobri Pahar Pur Nashaib Teh & Dist Layyah",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well (Hand Pump 100-130ft)",
-     "location": "Village Pegham Korona Uc Maira Turagzai, Tehsil & district:Charsadda",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
-     "location": "District Layyah - Punjab",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
-     "location": "District Layyah - Punjab",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
-     "location": "District Layyah - Punjab",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
-     "location": "District Layyah - Punjab",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
-     "location": "District Layyah - Punjab",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
-     "location": "District Layyah - Punjab",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well -Solar Water Station",
-     "location": null,
-     "status": "planned"
-    },
-    {
-     "type": "Pakistan Water Well -Solar Water Station",
-     "location": null,
-     "status": "planned"
-    },
-    {
-     "type": "Pakistan Water Well -Shallow / Indus Well 100–130 ft",
-     "location": "Village Farooq Haji Kalai UC Mera Maira Turagzai, Tehsil & district:Charsadda",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well -Shallow / Indus Well 100–130 ft",
-     "location": "Village Saadat Abad UC Maira Turagzai, Tehsil & district Charsadda",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well -Shallow / Indus Well 100–130 ft",
-     "location": "Village Jagangir Abad UC Maira Utmanzai, Tehsil & district Charsadda",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well -Shallow / Indus Well 100–130 ft",
-     "location": "Village Halimabad Utmanzai UC Utmanzai Tehsil & district Charsadda",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well -Shallow / Indus Well 100–130 ft",
-     "location": "Village Bypass Utmanzai UC Utmanzai ,Tehsil & district:Charsadda",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well -Shallow / Indus Well 100–130 ft",
-     "location": "UC Mera Gulabad Tehsil & District Charsadda",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Solar Water Pump (100–130 ft )",
-     "location": "Govt Primary School Malikwala Ehsanpur - Kot Addu",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Solar Water Pump (100–130 ft )",
-     "location": "Govt Primary School Haider Gazi Kot addu",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well -Water Purification Station",
-     "location": "Jamia Farooqia, Shuja Abad, Multan, South Punjab",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
-     "location": "District Layyah - Punjab",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well -Water Purification Station",
-     "location": "Mehmoodkote Road Muzaffargarh - Punjab",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well – Shallow Water Well / Indus Well 100–130 ft",
-     "location": null,
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
-     "location": "District Layyah - Punjab",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
-     "location": "District Layyah - Punjab",
-     "status": "in_progress"
-    },
-    {
-     "type": "Pakistan Water Well - Water Well (Handpump) 60-70ft",
      "location": "District Layyah - Punjab",
      "status": "completed"
-    },
-    {
-     "type": "Pakistan Water Well -Water Purification Station",
-     "location": null,
-     "status": "planned"
-    },
-    {
-     "type": "Pakistan Water Well - Solar Water Well KP",
-     "location": "Village Dharra Sum, District Mansehra.",
-     "status": "in_progress"
     }
    ],
    "lat": 30.4,
@@ -601,28 +316,25 @@
   },
   {
    "country": "Ethiopia",
-   "count": 4,
+   "count": 3,
    "completed": 3,
    "wells": [
     {
      "type": "Hand pumped",
      "location": "Wetabecha Minjaro, Ethiopia",
-     "status": "completed"
+     "status": "completed",
+     "system": "Hand Pump"
     },
     {
      "type": "Shallow well",
      "location": "Sheekh Abdisalaan Kebeles, Ethiopia",
-     "status": "completed"
+     "status": "completed",
+     "system": "Hand Pump"
     },
     {
      "type": "Hand pumped",
      "location": "Ceel Xarlaad, Gursum, Ethiopia",
      "status": "completed"
-    },
-    {
-     "type": "Hand pumped",
-     "location": null,
-     "status": "in_progress"
     }
    ],
    "lat": 9.1,
@@ -636,62 +348,83 @@
     {
      "type": "Hand pumped",
      "location": "Weremba Secondary School, Kakamega, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "68.5 ft",
+     "system": "India Mark II"
     },
     {
      "type": "Hand pumped",
      "location": "Nambale Muslim Primary, Busia County, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "65.7 ft",
+     "system": "Hand pump"
     },
     {
      "type": "Hand pulley",
      "location": "Mtendeni, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "42 ft",
+     "system": "Hand pulley"
     },
     {
      "type": "Solar powered",
      "location": "Mirere village, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "43 ft",
+     "system": "Solar submersible"
     },
     {
      "type": "Hand pumped",
      "location": "Witu Furaha Primary School, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "65 ft",
+     "system": "India Mark II"
     },
     {
      "type": "Hand pumped",
      "location": "Witu Kijijini, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "80 ft",
+     "system": "Afidrev Deep Well"
     },
     {
      "type": "Hand pumped",
      "location": "Lunalo, Bumula Town, Bungoma,Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "30 ft",
+     "system": "India Mark II"
     },
     {
      "type": "Hand pumped",
      "location": "Afarshanle Primary School, Wajir, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "23 ft",
+     "system": "India Mark II"
     },
     {
      "type": "Hand pumped",
      "location": "Myanga, Khasoko, Bungoma, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "depth": "30 ft",
+     "system": "India Mark II"
     },
     {
      "type": "Solar powered",
      "location": "Matungu",
-     "status": "completed"
+     "status": "completed",
+     "system": "India Mark II"
     },
     {
      "type": "Solar powered",
      "location": "Garbatula, Isiolo, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "system": "Solar"
     },
     {
      "type": "Solar powered",
      "location": "Garbatula, Isiolo, Kenya",
-     "status": "completed"
+     "status": "completed",
+     "system": "Solar"
     }
    ],
    "lat": 0.4,
@@ -699,56 +432,33 @@
   },
   {
    "country": "Somalia",
-   "count": 4,
+   "count": 3,
    "completed": 3,
    "wells": [
     {
      "type": "Hand pumped",
      "location": "Beledweyn, Somalia",
-     "status": "completed"
+     "status": "completed",
+     "depth": "65 ft",
+     "system": "Afridev pump"
     },
     {
      "type": "Hand pumped",
      "location": "Howl Wadaag, Somalia",
-     "status": "completed"
+     "status": "completed",
+     "depth": "72 ft",
+     "system": "India Mark II"
     },
     {
      "type": "Hand pumped",
      "location": "Kismayo, Somalia",
-     "status": "completed"
-    },
-    {
-     "type": "Hand pumped",
-     "location": null,
-     "status": "in_progress"
+     "status": "completed",
+     "depth": "60 ft",
+     "system": "Afridev pump"
     }
    ],
    "lat": 5.2,
    "lng": 46.2
-  },
-  {
-   "country": "Sudan",
-   "count": 3,
-   "completed": 0,
-   "wells": [
-    {
-     "type": "Borehole",
-     "location": "Imad al-Din al-Dabba Mosque, Block 24",
-     "status": "planned"
-    },
-    {
-     "type": "Hand pumped",
-     "location": null,
-     "status": "in_progress"
-    },
-    {
-     "type": "Hand pumped",
-     "location": null,
-     "status": "in_progress"
-    }
-   ],
-   "lat": 15.6,
-   "lng": 32.5
   },
   {
    "country": "Tanzania",
@@ -758,12 +468,14 @@
     {
      "type": "Shallow well",
      "location": "Singida, Tanzania",
-     "status": "completed"
+     "status": "completed",
+     "system": "Hand Pump"
     },
     {
      "type": "Solar powered",
      "location": "Arusha,Tanzania",
-     "status": "completed"
+     "status": "completed",
+     "system": "Hand Pump"
     }
    ],
    "lat": -6.4,
@@ -777,7 +489,8 @@
     {
      "type": "Hand pumped",
      "location": "Banika Islamic Primary School, Uganda",
-     "status": "completed"
+     "status": "completed",
+     "system": "Hand Pump"
     }
    ],
    "lat": 1.4,
